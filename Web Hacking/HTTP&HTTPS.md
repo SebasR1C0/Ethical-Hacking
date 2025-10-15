@@ -9,9 +9,18 @@
 
 <img width="870" height="380" alt="image" src="https://github.com/user-attachments/assets/66e2311c-a209-431d-9cd4-d9994e4e610d" />
 
-# HTTP FLOW 
+# HTTPS FLOW 
 
 <img width="861" height="645" alt="image" src="https://github.com/user-attachments/assets/6c2cc230-c157-44cb-bd01-0a4c418634da" />
+
+# HTTP REQUEST
+
+<img width="871" height="410" alt="image" src="https://github.com/user-attachments/assets/871091a1-4f43-4591-bd10-a1ee0d32854c" />
+
+# HTTP Response
+
+<img width="855" height="456" alt="image" src="https://github.com/user-attachments/assets/c17aaa5f-95f4-416d-83ac-b227bbac83a8" />
+
 
 # TOOLS
 
