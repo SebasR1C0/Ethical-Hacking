@@ -21,11 +21,41 @@
 
 <img width="855" height="456" alt="image" src="https://github.com/user-attachments/assets/c17aaa5f-95f4-416d-83ac-b227bbac83a8" />
 
+# HTTP Headers
+
+## General Headers: 
+
+Used in request and response HTTP. 
+Content: 
+- Date
+- Connection
+
+## Entity Headers
+- Content-Type: Used to descrbe the rype of resource being transferred. Example: Content-Type: text/html
+- Media-Type: Example: Media-Type: application/pdf
+- Boundary: Acts as a marker to separate content when there is more than one in the same message. Example: boundary="b4e4fbd93540"
+- Content-Length: Example: Conten-Length: 385
+- Content-Encode: Example: Content-Encode: gzip
+
+## Request Headers
+- Host: Example: Host: www.inlanefreight.com
+- User-Agent: Describe the client requesting resources. Example: User-Agent: curl/7.77.0
+- Referer: Example: Referer: http://www.inlanefreight.com/
+- Accept: Wich medai types the client can understand it. Example: Accept: */*
+- Cookie: Example: Cookie: PHPSESSID=b4e4fbd93540
+- Authorization: A metehod to identify client. Authorization: BASIC cGFzc3dvcmQK
+
+## Response Header
+- 	Server: Apache/2.2.14 (Win32)
+- 	Set-Cookie: PHPSESSID=b4e4fbd93540
+- 	WWW-Authenticate: BASIC realm="localhost"
 
 # TOOLS
 
 ## cURL
-- Curl -O: Download the web page
-- Curl -o : Download the web page and the save the output in a specific path
-- Curl -s: Show the ouput
+- curl -O: Download the web page
+- curl -o : Download the web page and the save the output in a specific path
+- curl -s: Show the ouput
 - curl -k: Skip SSL certificate
+- curl -v: See HTTP response and request
+- curl -vvv: See more information about the conection
