@@ -50,6 +50,12 @@ Content:
 - 	Set-Cookie: PHPSESSID=b4e4fbd93540
 - 	WWW-Authenticate: BASIC realm="localhost"
 
+## Security Headers
+- Content-Security-Policy: Dictate the web page policy. Example: Content-Security-Policy: script-src 'self'
+- Strict-Transport-Security: Deny to use HTTP. Example: Strict-Transport-Security: max-age=31536000
+- Referrer-Policy:  Example: Referrer-Policy: origin
+
+
 # TOOLS
 
 ## cURL
@@ -59,3 +65,5 @@ Content:
 - curl -k: Skip SSL certificate
 - curl -v: See HTTP response and request
 - curl -vvv: See more information about the conection
+- curl -I: See the HEAD
+- curl -A: Set up 'User-Agent'
