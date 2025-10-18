@@ -26,6 +26,7 @@
 
 # Securing Front/Back End
 The top 20 most common mistakes web developers make that are essential for us as penetration testers are:
+
 No.	Mistake
 1.	Permitting Invalid Data to Enter the Database
 2.	Focusing on the System as a Whole
@@ -61,3 +62,6 @@ No.	Vulnerability
 8.	Software and Data Integrity Failures
 9.	Security Logging and Monitoring Failures
 10.	Server-Side Request Forgery (SSRF)
+
+# Sensitive Data Exposure
+
