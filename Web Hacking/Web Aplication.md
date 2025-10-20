@@ -65,4 +65,6 @@ No.	Vulnerability
 
 # Sensitive Data Exposure
 - Sensistive Data Expouser: view-source
-- HTML Injection
+- HTML Injection: <style> body { background-image: url('https://academy.hackthebox.com/images/logo.svg'); } </style>
+- Cross-Site Scripting (XSS): #"><img src=/ onerror=alert(document.cookie)>
+- Cross-Site Request Forgery (CSRF)
