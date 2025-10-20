@@ -70,4 +70,4 @@ No.	Vulnerability
 - Cross-Site Request Forgery (CSRF)
 
 # Common Vulnerability Scoring System (CVSS)
-<url https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator>
+Calculator https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator
