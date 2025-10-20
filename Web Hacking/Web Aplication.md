@@ -68,3 +68,6 @@ No.	Vulnerability
 - HTML Injection: <style> body { background-image: url('https://academy.hackthebox.com/images/logo.svg'); } </style>
 - Cross-Site Scripting (XSS): #"><img src=/ onerror=alert(document.cookie)>
 - Cross-Site Request Forgery (CSRF)
+
+# Common Vulnerability Scoring System (CVSS)
+<url https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator>
