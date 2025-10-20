@@ -65,3 +65,4 @@ No.	Vulnerability
 
 # Sensitive Data Exposure
 - Sensistive Data Expouser: view-source
+- HTML Injection
