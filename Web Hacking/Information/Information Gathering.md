@@ -24,3 +24,28 @@
 - Malware Analysis
 - Threat Intelligence Report
 
+# DNS
+## DNS TOOLS
+- dig: Versatile DNS lookup tool that supports various query types (A, MX, NS, TXT, etc.) and detailed output.
+- nslookup: Simpler DNS lookup tool, primarily for A, AAAA, and MX records.
+- host: Streamlined DNS lookup tool with concise output.
+- dnsenum: Automated DNS enumeration tool, dictionary attacks, brute-forcing, zone transfers (if allowed).
+- fierce: DNS reconnaissance and subdomain enumeration tool with recursive search and wildcard detection.
+- dnsrecon: Combines multiple DNS reconnaissance techniques and supports various output formats.
+- theHarvester: OSINT tool that gathers information from various sources, including DNS records (email addresses).
+- Online DNS Lookup Services:	User-friendly interfaces for performing DNS lookups.	
+
+## Subdomains vs Vhost:
+- Subdomains: These are extensions of a main domain name (e.g., blog.example.com is a subdomain of example.com). Subdomains typically have their own DNS records, pointing to either the same IP address as the main domain or a different one. They can be used to organise different sections or services of a website.
+- Virtual Hosts (VHosts): Virtual hosts are configurations within a web server that allow multiple websites or applications to be hosted on a single server. They can be associated with top-level domains (e.g., example.com) or subdomains (e.g., dev.example.com). Each virtual host can have its own separate configuration, enabling precise control over how requests are handled.
+
+Example:
+
+Subdomains:
+<img width="914" height="420" alt="image" src="https://github.com/user-attachments/assets/6768f42b-a60b-46be-9eec-18254ba6a8c1" />
+
+Zone Transfer
+<img width="970" height="500" alt="image" src="https://github.com/user-attachments/assets/ac0e26e4-b34b-4e28-bc6a-910d097a1ef3" />
+
+Vhost:
+<img width="1264" height="478" alt="image" src="https://github.com/user-attachments/assets/7fc29f6d-e623-440d-90db-bb1c74bb209c" />
