@@ -85,3 +85,11 @@ Identify target system's infrastructre
   "scopes_supported": ["openid", "profile", "email"]
 }
 ```
+
+# Creepy Crawlies
+python3 ReconSpider.py http://inlanefreight.com
+
+<img width="1013" height="664" alt="image" src="https://github.com/user-attachments/assets/d5bcafcf-f617-40e9-ae95-f5bab1cf537e" />
+
+
+
