@@ -44,6 +44,7 @@ Content:
 - Accept: Wich medai types the client can understand it. Example: Accept: */*
 - Cookie: Example: Cookie: PHPSESSID=b4e4fbd93540
 - Authorization: A metehod to identify client. Authorization: BASIC cGFzc3dvcmQK
+- X-Forwarded-For: 10.10.11.2
 
 ## Response Header
 - 	Server: Apache/2.2.14 (Win32)
