@@ -72,8 +72,7 @@ Identify target system's infrastructre
 - nikto: Web server scanner
 
 # Well-Known URIs
-```
-JSON
+```json
 {
   "issuer": "https://example.com",
   "authorization_endpoint": "https://example.com/oauth2/authorize",
