@@ -52,3 +52,37 @@ Zone Transfer
 Vhost:
 
 <img width="1264" height="478" alt="image" src="https://github.com/user-attachments/assets/7fc29f6d-e623-440d-90db-bb1c74bb209c" />
+
+# Fingerprinting
+Identify target system's infrastructre
+
+## Conerstone:
+- Target Attackts
+- Identifying Missconfigurations
+- Prioritising Targets
+- Building a comprehensive profile
+
+## Tools
+- Wappalyzer
+- BuiltWith: Provide detailed reports on a webtsite's technologies
+- WhatWeb
+- Nmap
+- Netcraft: Provide website fingerprinting and security reporting
+- wafw00f: Identifying WAFs
+- nikto: Web server scanner
+
+# Well-Known URIs
+```
+JSON
+{
+  "issuer": "https://example.com",
+  "authorization_endpoint": "https://example.com/oauth2/authorize",
+  "token_endpoint": "https://example.com/oauth2/token",
+  "userinfo_endpoint": "https://example.com/oauth2/userinfo",
+  "jwks_uri": "https://example.com/oauth2/jwks",
+  "response_types_supported": ["code", "token", "id_token"],
+  "subject_types_supported": ["public"],
+  "id_token_signing_alg_values_supported": ["RS256"],
+  "scopes_supported": ["openid", "profile", "email"]
+}
+```
