@@ -185,4 +185,34 @@ Finished
 ```
 # Subdomain Fuzzing
 ```bash
+┌──(root㉿sebas)-[/home/sebastianrojas]
+└─# gobuster dns --do inlanefreight.com -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt                                                           
+===============================================================
+Gobuster v3.8
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Domain:     inlanefreight.com
+[+] Threads:    10
+[+] Timeout:    1s
+[+] Wordlist:   /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
+===============================================================
+Starting gobuster in DNS enumeration mode
+===============================================================
+www.inlanefreight.com 2a03:b0c0:1:e0::32c:b001,134.209.24.248
+blog.inlanefreight.com 2a03:b0c0:1:e0::32c:b001,134.209.24.248
+ns1.inlanefreight.com 178.128.39.165
+ns2.inlanefreight.com 206.189.119.186
+ns3.inlanefreight.com 134.209.24.248
+support.inlanefreight.com 134.209.24.248
+my.inlanefreight.com 134.209.24.248
 ```
+# Filtering Fuzzing Output (ffuf)
+- mc (match code) 
+- fc (filter code)
+- fs (filter size) 
+- ms (match size) 
+- fw (filter out number of word in response) 
+- mw (match number count)
+- fl (filter line)
+- ml (match line)
+- mt (match time)
