@@ -216,3 +216,29 @@ my.inlanefreight.com 134.209.24.248
 - fl (filter line)
 - ml (match line)
 - mt (match time)
+
+# Web APIs
+- Representational State Transfer (REST)
+```http
+Representational State Transfer (REST)
+```
+- Simple Object Access Protocol (SOAP)
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetStockPrice>
+         <tem:StockName>AAPL</tem:StockName>
+      </tem:GetStockPrice>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+- Graphql
+```graphql
+query {
+  user(id: 123) {
+    name
+    email
+  }
+}
+```
