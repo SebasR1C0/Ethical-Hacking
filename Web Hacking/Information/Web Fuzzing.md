@@ -219,26 +219,52 @@ my.inlanefreight.com 134.209.24.248
 
 # Web APIs
 - Representational State Transfer (REST)
+  Query Parameters: /users?limit=10&sort=name
+  Path Parameters: /products/{id}pen_spark
+  Request Body Parameters: { "name": "New Product", "price": 99.99 }
+
 ```http
-Representational State Transfer (REST)
+GET /users/123
 ```
+
 - Simple Object Access Protocol (SOAP)
 ```xml
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lib="http://example.com/library">
    <soapenv:Header/>
    <soapenv:Body>
-      <tem:GetStockPrice>
-         <tem:StockName>AAPL</tem:StockName>
-      </tem:GetStockPrice>
+      <lib:SearchBooks>
+         <lib:keywords>cybersecurity</lib:keywords>
+         <lib:author>Dan Kaminsky</lib:author>
+      </lib:SearchBooks>
    </soapenv:Body>
 </soapenv:Envelope>
 ```
 - Graphql
+  Field: name, email
+  Relationship: posts
+  Nested Object: posts { title, body }
+  Argument: posts(limit: 5) (retrieves the first 5 posts of a user)
 ```graphql
 query {
   user(id: 123) {
     name
     email
+    posts(limit: 5) {
+      title
+      body
+    }
+  }
+}
+```
+- GraphQL Mutations
+  Operation: createPost
+  Argument: title: "New Post", body: "This is the content of the new post"
+  Selection: id, title
+```graphql
+mutation {
+  createPost(title: "New Post", body: "This is the content of the new post") {
+    id
+    title
   }
 }
 ```
