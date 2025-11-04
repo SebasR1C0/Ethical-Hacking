@@ -19,3 +19,4 @@ Furthermore, some of the jQuery library functions that write to DOM objects are:
 
 ## Common attacks
 - img src="" onerror=alert(window.origin)
+- <script> alert("CHUPAPI")</script> -> payloads with js lanaguage
