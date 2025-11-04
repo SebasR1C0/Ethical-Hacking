@@ -22,4 +22,4 @@ Furthermore, some of the jQuery library functions that write to DOM objects are:
 - <script> alert("CHUPAPI")</script> -> payloads with js language
 - svg onload=alert(1)> -> payloads with js language
 - img src onerror=alert(document.domain)> -> inner html (img or iframe)
-- 
+
