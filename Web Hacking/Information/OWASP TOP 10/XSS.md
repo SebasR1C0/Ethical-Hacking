@@ -18,5 +18,8 @@ Furthermore, some of the jQuery library functions that write to DOM objects are:
 - append()
 
 ## Common attacks
-- img src="" onerror=alert(window.origin)
-- <script> alert("CHUPAPI")</script> -> payloads with js lanaguage
+- img src="" onerror=alert(window.origin)>
+- <script> alert("CHUPAPI")</script> -> payloads with js language
+- svg onload=alert(1)> -> payloads with js language
+- img src onerror=alert(document.domain)> -> inner html (img or iframe)
+- 
