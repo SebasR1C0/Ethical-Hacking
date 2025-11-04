@@ -21,3 +21,14 @@ pip3 install -r requirements.txt
 ```bash
 python3 api_fuzzer.py http://IP:PORT
 ``` 
+# xsstrike
+- Download
+```bash
+git clone https://github.com/s0md3v/XSStrike.git
+cd XSStrike
+pip install -r requirements.txt
+```
+- Example
+```bash
+python3 xsstrike.py -u "http://SERVER_IP:PORT/index.php?task=test" 
+``` 
