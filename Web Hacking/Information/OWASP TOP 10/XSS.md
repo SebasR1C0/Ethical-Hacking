@@ -18,4 +18,4 @@ Furthermore, some of the jQuery library functions that write to DOM objects are:
 - append()
 
 ## Common attacks
-- '<img src="" onerror=alert(window.origin)>'
+- img src="" onerror=alert(window.origin)
