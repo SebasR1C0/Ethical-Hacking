@@ -1,4 +1,5 @@
 # Common Information
+To get api token of wpscan: [WPSCAN](https://wpscan.com/profile/)
 ## Directories
 ```bash
 BlxckShaiiko@htb[/htb]$ tree -L 1 /var/www/html
