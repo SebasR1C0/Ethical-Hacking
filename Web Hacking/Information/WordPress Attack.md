@@ -1,5 +1,6 @@
 # Common Information
-To get api token of wpscan: [WPSCAN](https://wpscan.com/profile/)
+- To get api token of wpscan: [WPSCAN](https://wpscan.com/profile/)
+- [WordPress xmlrpc attacks](https://nitesculucian.github.io/2019/07/02/exploiting-the-xmlrpc-php-on-all-wordpress-versions/)
 ## Directories
 ```bash
 BlxckShaiiko@htb[/htb]$ tree -L 1 /var/www/html
@@ -60,3 +61,8 @@ curl -s -X GET http://83.136.254.84:54956/wp-content/plugins/mail-masta/inc/flag
 curl -s -I http://TARGET-IP/?author=1
 curl http://TARGET-IP/wp-json/wp/v2/users | jq
 ```
+## WPSCAM
+```bash
+wpscan --url http://94.237.48.51:32588 --enumerate --api-token Zgus5KAsiK755cpYUNX2ba1KcsdIrIDEjnR5mkPGjzU
+```
+
