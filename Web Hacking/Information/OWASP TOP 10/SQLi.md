@@ -10,10 +10,6 @@ tom' or '1'='1
 ```bash
 ' or id = 5)-- 
 ```
-## Using Comments
-```bash
-' or id = 5)-- 
-```
 ## Union Injection
 Find the numbers of columns
 
