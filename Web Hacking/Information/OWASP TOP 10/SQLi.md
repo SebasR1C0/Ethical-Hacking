@@ -16,7 +16,10 @@ tom' or '1'='1
 ```
 # Union Injection
 Find the numbers of columns
+
 <img width="580" height="242" alt="image" src="https://github.com/user-attachments/assets/f49e9d3f-ed74-4a4f-be3b-11da01a80afb" />
+
+
 Payload
 ```bash
 # Gathering information
