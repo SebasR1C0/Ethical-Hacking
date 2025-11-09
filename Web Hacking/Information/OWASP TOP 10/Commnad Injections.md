@@ -25,13 +25,13 @@ if (isset($_GET['filename'])) {
 | Injection Type | Operators |
 |---|---|
 | SQL Injection | `', ;, --, /* */` |
-| Command Injection | `;, &` |
+| Command Injection | `; &&` |
 | LDAP Injection | `* ( ) & \|` |
 | XPath Injection | `' or and not substring concat count` |
-| OS Command Injection | `;, & \|` |
-| Code Injection | `', ;, --, /* */ $() ${} #{} %{} ^` |
-| Directory Traversal/File Path Traversal | `../, ..\\, %00` |
-| Object Injection | `;, & \|` |
-| XQuery Injection | `', ;, --, /* */` |
+| OS Command Injection | `; & \|` |
+| Code Injection | `' ; -- /* */ $() ${} #{} %{} ^` |
+| Directory Traversal/File Path Traversal | `../ ..\\ %00` |
+| Object Injection | `; & \|` |
+| XQuery Injection | `' ; -- /* */` |
 | Shellcode Injection | `\x \u %u %n` |
 | Header Injection | `\n \r \n \r \t %0d %0a %09` |
