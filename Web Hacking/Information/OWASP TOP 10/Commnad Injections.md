@@ -28,7 +28,7 @@ if (isset($_GET['filename'])) {
 | Command Injection | `;, &` |
 | LDAP Injection | `* ( ) & |` |
 | XPath Injection | `' or and not substring concat count` |
-| OS Command Injection | `;, & |` |
+| OS Command Injection | ;, & | |
 | Code Injection | `', ;, --, /* */ $() ${} #{} %{} ^` |
 | Directory Traversal/File Path Traversal | `../, ..\\, %00` |
 | Object Injection | `;, & |` |
