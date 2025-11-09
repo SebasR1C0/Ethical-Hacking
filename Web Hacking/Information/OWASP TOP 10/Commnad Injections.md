@@ -16,9 +16,9 @@ if (isset($_GET['filename'])) {
 | Semicolon          | `;`                 | `%3b`                 |
 | New Line           | `\n`                | `%0a`                 |
 | Background         | `&`                 | `%26`                 |
-| Pipe               | `|`                 | `%7c`                 |
+| Pipe               | `\|`                 | `%7c`                 |
 | AND                | `&&`                | `%26%26`              |
-| OR                 | `||`                | `%7c%7c`              |
+| OR                 | `\|\|`                | `%7c%7c`              |
 | Sub-Shell          | `` `..` ``          | `%60%60`              |
 | Sub-Shell          | `$()`                | `%24%28%29`           |
 # Commond types
