@@ -9,6 +9,7 @@ Note:  /index.ext to determine what languages runs in the server (i.e index.php)
 - BackEnd
 Changing the file's content type upload
 <img width="2806" height="790" alt="image" src="https://github.com/user-attachments/assets/1917b5be-45c6-4231-9934-0a42c8ebc1f4" />
+
 - FrontEnd
 Removing validation like extension types of file or removing the js function
 <img width="1942" height="455" alt="image" src="https://github.com/user-attachments/assets/db13c0f9-deef-43ff-b56c-1d105134b6cc" />
@@ -17,4 +18,12 @@ Removing validation like extension types of file or removing the js function
 
 Deny .php so try to change the extension with [PHP List](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecure%20Files/Extension%20PHP/extensions.lst/)
 <img width="2108" height="643" alt="image" src="https://github.com/user-attachments/assets/760462b4-750b-473b-9e9e-96819c9daa51" />
+
+## Type Filters
+- Content-Type: [Content-Type Wordlist](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-all-content-types.txt/)
+<img width="2096" height="676" alt="image" src="https://github.com/user-attachments/assets/46a4bdcc-7ce2-4fbc-866a-af98d91709b1" />
+
+- MIME-Type: [Start Type File](https://en.wikipedia.org/wiki/List_of_file_signatures/)
+<img width="2076" height="710" alt="image" src="https://github.com/user-attachments/assets/9d8b4126-f691-46b4-a848-affccc63f44e" />
+
 
