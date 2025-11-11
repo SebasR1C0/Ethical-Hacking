@@ -26,4 +26,8 @@ Deny .php so try to change the extension with [PHP List](https://github.com/swis
 - MIME-Type: [Start Type File](https://en.wikipedia.org/wiki/List_of_file_signatures/)
 <img width="2076" height="710" alt="image" src="https://github.com/user-attachments/assets/9d8b4126-f691-46b4-a848-affccc63f44e" />
 
+## Limited File Uploads
+### XSS
+- Add xss in the file:
+
 
