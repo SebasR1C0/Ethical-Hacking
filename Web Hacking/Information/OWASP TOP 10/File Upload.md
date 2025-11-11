@@ -13,4 +13,4 @@ Changing the file's content type upload
 Removing validation like extension types of file or removing the js function
 <img width="1942" height="455" alt="image" src="https://github.com/user-attachments/assets/db13c0f9-deef-43ff-b56c-1d105134b6cc" />
 ## Blacklist Filters
-Deny .php so try to change the extension with (PHP List][https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecure%20Files/Extension%20PHP/extensions.lst/]
+Deny .php so try to change the extension with (PHP List)[https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecure%20Files/Extension%20PHP/extensions.lst/]
