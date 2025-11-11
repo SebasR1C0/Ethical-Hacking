@@ -1,5 +1,5 @@
 # Server-Side Request Forgery (SSRF)
-- http// and http://
+- http:// or https://
 - file://
 - gopher://
 ## Identifying
