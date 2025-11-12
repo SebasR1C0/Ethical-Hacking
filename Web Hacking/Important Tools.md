@@ -3,6 +3,7 @@
 - [xss-payload-list](https://github.com/payloadbox/xss-payload-list)
 
 # ReconSpider
+Recon all the web page
 - Download
 ```bash
 pip3 install scrapy
@@ -15,6 +16,7 @@ python3 ReconSpider.py http://inlanefreight.com
 ``` 
 
 # Fuzzing the API
+Reconaisse all paths in the system
 - Download
 ```bash
 git clone https://github.com/PandaSt0rm/webfuzz_api.git
@@ -26,6 +28,7 @@ pip3 install -r requirements.txt
 python3 api_fuzzer.py http://IP:PORT
 ``` 
 # xsstrike
+Explotating xss attack
 - Download
 ```bash
 git clone https://github.com/s0md3v/XSStrike.git
@@ -70,3 +73,15 @@ encoding
 ```
 ## Gopherus protocol
 [Gopherus](https://github.com/tarunkant/Gopherus)
+
+## SSTI tool
+- Download
+```bash
+git clone https://github.com/vladko312/SSTImap
+cd SSTImap
+pip3 install -r requirements.txt
+```
+- Example
+```bash
+python3 sstimap.py -u http://172.17.0.2/index.php?name=test
+```
