@@ -85,3 +85,24 @@ pip3 install -r requirements.txt
 ```bash
 python3 sstimap.py -u http://172.17.0.2/index.php?name=test
 ```
+## Username Anarchy
+Create own dictionary
+- Download
+```bash
+git clone https://github.com/urbanadventurer/username-anarchy.git
+cd username-anarchy
+```
+- Example
+```bash
+./username-anarchy Jane Smith > jane_smith_usernames.txt
+```
+## CUPP
+Create a more personal dictionary
+- Download
+```bash
+sudo apt install cupp -y
+```
+- Example
+```bash
+cupp -i
+```
