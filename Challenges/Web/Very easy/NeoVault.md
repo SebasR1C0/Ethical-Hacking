@@ -1,8 +1,10 @@
 # NeoVault
-
+At the beginning of this machine, I have to recconnise all the web, before that I have to create an account and log in with this account.
+Once I see some APIs in my proxy so I tried to change something and here, I got important information.
 
 <img width="923" height="500" alt="image" src="https://github.com/user-attachments/assets/3421d384-120a-4d57-9efa-16166c077720" />
 
+I got a message of all my transactions in the web of a mysterious user with:
 User ID's
 ```bash
 6915261a7f59f1fe63f682d9
