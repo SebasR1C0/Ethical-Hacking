@@ -19,9 +19,14 @@ This was asked me for a parameter "_id" so I put the id 6915261a7f59f1fe63f682d9
 Once a download a file a got a username
 User: user_with_flag
 
-
+So I treid to send a transaction to this account
 <img width="915" height="466" alt="image" src="https://github.com/user-attachments/assets/6fd29c08-087e-497d-9094-9eeda6f7a0e4" />
 
+The server give me this ID
+User ID's
+```bash
+6915261a7f59f1fe63f682de
+```
 <img width="907" height="451" alt="image" src="https://github.com/user-attachments/assets/b534b879-0aa0-4ce7-91ad-57faea4fa4df" />
 
 
