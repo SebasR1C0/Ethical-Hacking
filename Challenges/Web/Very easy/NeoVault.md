@@ -7,10 +7,10 @@ User ID's
 ```bash
 6915261a7f59f1fe63f682d9
 ```
-This indicated the existence of discoverable resource identifiers that could be probed further.
+The application’s public endpoints were predominantly namespaced under /api/v2. As a heuristic, I attempted the equivalent legacy path /api/v1 because older API versions often lack later security hardenings.
 <img width="927" height="449" alt="image" src="https://github.com/user-attachments/assets/2f587974-cc87-4641-ba2c-f3fe35ab51ac" />
 
-The application’s public endpoints were predominantly namespaced under /api/v2. As a heuristic, I attempted the equivalent legacy path /api/v1 because older API versions often lack later security hardenings. When POSTing to /api/v1/transactions/download-transactions the server required a single parameter _id (error when omitted: {"message":"_id is not provided"}). This confirmed the endpoint performs input validation but did not yet indicate ownership checks.
+When POSTing to /api/v1/transactions/download-transactions the server required a single parameter _id (error when omitted: {"message":"_id is not provided"}). This confirmed the endpoint performs input validation but did not yet indicate ownership checks.
 <img width="958" height="481" alt="image" src="https://github.com/user-attachments/assets/62b2d676-86e9-4e36-813e-dae1309ebe1e" />
 
 I submitted the observed identifier as the _id parameter to the legacy endpoint and successfully downloaded the associated transactions file. The downloaded artifact contained contextual data including a 
