@@ -4,13 +4,17 @@ At the beginning of the challenge, the application provided a single input field
 <img width="671" height="625" alt="image" src="https://github.com/user-attachments/assets/76c2b50d-96a2-4392-8e12-8e2e0ab79c1c" />
 
 SSince the XSS vector did not work, I shifted my focus to Server-Side Template Injection (SSTI). I tested the common expression ${7*7} to verify whether the input was processed by a template engine capable of evaluating expressions server-side. The output confirmed that code execution was happening
+
 <img width="647" height="461" alt="image" src="https://github.com/user-attachments/assets/6b26149b-7e6f-48a7-b4f0-a5c8a2f90bf6" />
 
 I had to identify the template in the web site, I identified a Mako template:
+
 <img width="1440" height="943" alt="image" src="https://github.com/user-attachments/assets/5eb2a1fa-cae1-4fbf-8a45-2b76f7234ea3" />
 
 That's why I was searching payload for that [SSTI Payload](https://www.yeswehack.com/learn-bug-bounty/server-side-template-injection-exploitation)
+
 <img width="481" height="185" alt="image" src="https://github.com/user-attachments/assets/af2cee88-48df-4a1a-a2e0-b2c515313590" />
+
 So change the payload to "cat /falg.txt" and I got the flag!
 ```python
 ${self.module.cache.util.os.popen("cat /flag.txt").read()}
