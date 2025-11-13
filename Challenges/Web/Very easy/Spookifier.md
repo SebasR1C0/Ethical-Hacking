@@ -7,8 +7,9 @@ SSince the XSS vector did not work, I shifted my focus to Server-Side Template I
 <img width="647" height="461" alt="image" src="https://github.com/user-attachments/assets/6b26149b-7e6f-48a7-b4f0-a5c8a2f90bf6" />
 
 I had to identify the template in the web site, I identified a Mako template:
+<img width="1440" height="943" alt="image" src="https://github.com/user-attachments/assets/5eb2a1fa-cae1-4fbf-8a45-2b76f7234ea3" />
+
 That's why I was searching payload for that [SSTI Payload](https://www.yeswehack.com/learn-bug-bounty/server-side-template-injection-exploitation)
-I got a RCE attack 
 <img width="481" height="185" alt="image" src="https://github.com/user-attachments/assets/af2cee88-48df-4a1a-a2e0-b2c515313590" />
 So change the payload to "cat /falg.txt" and I got the flag!
 ```python
