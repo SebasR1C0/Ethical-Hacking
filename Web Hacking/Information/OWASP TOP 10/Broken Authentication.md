@@ -46,6 +46,7 @@ fuf -w numbers.txt -u http://83.136.255.106:56237/admin.php?user_id=FUZZ -fr "Co
 ```
 # Session Attacks
 <img width="1550" height="219" alt="image" src="https://github.com/user-attachments/assets/db74baf9-2623-423a-88cc-9b98bda43a79" />
+
 ```bash
 # Decode
 echo -n dXNlcj1odGItc3RkbnQ7cm9sZT11c2Vy | base64 -d
