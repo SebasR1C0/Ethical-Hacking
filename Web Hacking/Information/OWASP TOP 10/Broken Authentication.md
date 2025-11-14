@@ -38,6 +38,7 @@ ffuf -w /opt/useful/seclists/Usernames/xato-net-10-million-usernames.txt -u http
 <img width="473" height="245" alt="image" src="https://github.com/user-attachments/assets/793b3385-3665-4627-934b-ee5d13477c07" />
 
 <img width="466" height="274" alt="image" src="https://github.com/user-attachments/assets/a83acc60-c728-424a-9139-972a0a264055" />
+
 ## Parameter Modification
 IDOR attack
 ```bash
@@ -55,3 +56,4 @@ echo -n 'user=htb-stdnt;role=admin' | base64
 
 dXNlcj1odGItc3RkbnQ7cm9sZT1hZG1pbg==
 ```
+Credentials -> gladys / dWinaldasD13
