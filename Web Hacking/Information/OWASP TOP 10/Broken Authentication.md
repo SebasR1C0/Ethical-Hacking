@@ -56,4 +56,8 @@ echo -n 'user=htb-stdnt;role=admin' | base64
 
 dXNlcj1odGItc3RkbnQ7cm9sZT1hZG1pbg==
 ```
+
+
+
+
 Credentials -> gladys / dWinaldasD13
