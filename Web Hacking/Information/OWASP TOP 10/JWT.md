@@ -1,5 +1,5 @@
 # JWT
-
+- Decode Tools: (JWT Dedoder)[https://www.jwt.io/] and Burpsuite
 | Tipo de Clave     | Algoritmos JWT Comunes        | Caso de Uso Principal                                      |
 |-------------------|--------------------------------|-------------------------------------------------------------|
 | **Symmetric Key** | HS256, HS384, HS512            | Sistemas internos donde se comparte una única clave secreta. |
