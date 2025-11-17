@@ -5,5 +5,5 @@ While reviewing the application’s source code, I noticed that the website reli
 Additionally, I observed that viewing all created tickets required Administrator privileges. This authorization check was based solely on the value of the role field inside the JWT payload:
 <img width="609" height="217" alt="image" src="https://github.com/user-attachments/assets/a6597afc-41a2-446e-966b-beb5cf9f72f0" />
 
-Soo with that Only I have to change my signature and my user to enter like an Admin
+Since the server’s secret key was publicly available in the source code, it was possible to forge a valid token. By generating a new JWT signed with the same secret and modifying the payload to:
 <img width="937" height="378" alt="image" src="https://github.com/user-attachments/assets/96dd6cf9-7cd1-4d12-9070-4e5d77ad4465" />
