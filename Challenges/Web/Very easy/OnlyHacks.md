@@ -1,5 +1,6 @@
 # OnlyHacks
 At the beginning of the challenge, I was required to create an account. Once registered, the application opened an automated chat with Renata. Since the chat reflected back my input, I tested for possible client-side injection. After a few attempts, I confirmed that the application was vulnerable to XSS, as shown below:
+
 <img width="414" height="134" alt="image" src="https://github.com/user-attachments/assets/258af85a-bfc8-4074-bd5d-5fc381d2a554" />
 
 After confirming the vulnerability, the next step was to determine whether I could exfiltrate Renata’s session cookie. To do this, I used RequestBin, which allowed me to capture outbound HTTP requests. I crafted the following payload to send Renata’s cookie to my controlled endpoint:```bash
