@@ -21,12 +21,3 @@ ffuf -w /opt/useful/seclists/Discovery/Web-Content/default-web-root-directory-li
 ffuf -w ./LFI-WordList-Linux:FUZZ -u 'http://<SERVER_IP>:<PORT>/index.php?language=../../../../FUZZ' -fs 2287
 ```
 
-
-# Fuzzing Parameters
-```bash
-```
-
-
-# Fuzzing Parameters
-```bash
-```
