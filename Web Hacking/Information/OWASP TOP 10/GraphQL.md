@@ -70,7 +70,7 @@ query { __schema { mutationType { name fields { name args { name defaultValue ty
 ```bash
 { __type(name: \"RegisterUserInput\") { name inputFields { name description defaultValue } } }
 ```
-
+Note: Take care in password input
 ```bash
 mutation{ registerUser(input: {username:\"user\", password: \"ee11cbb19052e40b07aac0ca060c23ee\", role:\"admin\", msg:\"chupapi\"}) {user {username password role msg}}}
 ```
