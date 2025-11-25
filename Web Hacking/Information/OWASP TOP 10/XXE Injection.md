@@ -70,6 +70,7 @@ Payload
 
 ## Error Based XXE
 <img width="1531" height="451" alt="image" src="https://github.com/user-attachments/assets/e4859438-5010-4ca5-8576-084519400caa" />
+
 - Example
 LFI
 ``` bash
