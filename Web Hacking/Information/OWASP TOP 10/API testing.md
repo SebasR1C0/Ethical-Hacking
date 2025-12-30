@@ -77,14 +77,21 @@ dd if=/dev/urandom of=certificateOfIncorporation.pdf bs=1M count=30
 ```
 
 # Unrestricted Resource Consumption
-```bash
-```
+DDOS attack or big file uploaded
 
-# Unrestricted Resource Consumption
-```bash
-```
+# Broken Function Level Authorization
+Don't need auth
 
-# Unrestricted Resource Consumption
-```bash
-```
+# Unrestricted Access to Sensitive Business Flows
+Don't need auth
 
+# Server Side Request Forgery
+
+# Security Misconfiguration (SQLi)
+```bash
+hola' or '1' = '1'-- -
+```
+# Improper Inventory Management
+CHanging the api version to v0
+
+<img width="1330" height="100" alt="image" src="https://github.com/user-attachments/assets/adf48d27-9d24-4604-8a90-37c83b243441" />
