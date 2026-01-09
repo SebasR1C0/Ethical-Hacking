@@ -95,11 +95,11 @@ Evidencia de qué archivos abrió el usuario y qué programas ejecutó.
 
 ### UserAssist
 * **Ruta:** `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\UserAssist`
-* [cite_start]**Función:** Rastrea la ejecución de programas con interfaz gráfica (GUI) por usuario[cite: 10, 13].
+* **Función:** Rastrea la ejecución de programas con interfaz gráfica (GUI) por usuario.
 
 ### RecentDocs
 * **Ruta:** `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs`
-* [cite_start]**Función:** Muestra la interacción con archivos recientes (los últimos abiertos o guardados)[cite: 7, 16].
+* **Función:** Muestra la interacción con archivos recientes (los últimos abiertos o guardados).
 
 ### ShellBags
 * **Ruta:** `HKCU\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU` (y `\Bags`)
