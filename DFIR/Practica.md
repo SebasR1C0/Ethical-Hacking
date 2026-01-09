@@ -61,13 +61,15 @@
 
 Busco evidencia de ejecución en artefactos como Prefetch, Shimcache y AmCache. Prefetch me indica cuándo se ejecutó y cuántas veces; Shimcache y AmCache permiten detectar ejecutables incluso si ya fueron eliminados
 
-#
+# Artefactos de Acceso a Archivos y Carpetas
+"¿El usuario sabía que ese archivo estaba ahí? ¿Lo abrió?"
+- LNK Files (Accesos directos): Cuando abres un archivo, Windows crea un .lnk en "Recientes". Te dice la ruta original y fechas, incluso si el archivo estaba en un USB que ya no está conectado.
+- Shellbags: Son claves de registro que guardan el tamaño y posición de las ventanas del explorador. Si un atacante navegó por carpetas buscando información, los Shellbags te dirán qué carpetas visitó, incluso si esas carpetas ya no existen.
+- JumpLists: Las listas de "recientes" que aparecen al dar clic derecho en un icono de la barra de tareas.
 
-
-
-#
-
-
+# La MFT (Master File Table)
+- Si un archivo es muy pequeño (aprox. menos de 700 bytes), NTFS no lo guarda en el disco normal, lo guarda directamente dentro de la MFT.
+- Timestamps ($STANDARD_INFORMATION vs $FILE_NAME): Un archivo tiene dos sets de fechas. Los atacantes suelen modificar uno (Timestomping) para ocultarse, pero a veces se olvidan del otro. La MFT guarda ambos.
 
 # Event Logs (Windows Event Logs) - Los IDs Clave
 - 4624: Inicio de sesión exitoso (Logon Success).
