@@ -57,6 +57,7 @@ La adquisición por memoria se debe realizar conectando un usb para no compromet
 # Adquisición de Disco (Triage vs. Imagen Completa)
 1. Copia Completa: Aquí residen los archivos borrados que aún no han sido sobrescritos. Solo una imagen completa permite la recuperación de datos eliminados (Data Carving).
 2. Triage Forense (Adquisición Selectiva / Fast Forensics)
+KAPE
 
 # Artefactos de Ejecución (Evidence of Execution)
 "¿Se ejecutó este malware/programa en la máquina?"
