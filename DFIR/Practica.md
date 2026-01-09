@@ -1,41 +1,41 @@
-  # Etapas
-  En las etapas de respuestas a incidentes
-  1. Preparación: Definir los procesos y herramientas a utilizar 
-  2. Identificación y detección: Detección del incidente, equipos afectados y determinar el alcance inicial
-  3. Contención: Contener los equipos afectados para evitar su movimiento laterar y propagación del virus
-  4. Erradicación: Eliminar el malware, persistencia y backdoors
-  5. Recuperación: Restaurar los ervicios
-  6. Lecciones aprendidas: Información forense y corregir errores
-  
-  # Etapas específicas de la Adquisición Forense
-  1. Planeación
-  2. Identifiación de evidencias
-  3. Adquisión
-  4. Preservación
-  5. Documentación y cadena de custodia
-  
-  # Tipos de Adquisión
-  En la adquisión forense existen 2 tipos:
-  1. Equipo Activo: Equipo encendido y en ejecución
-  - RAM
-  - Procesos
-  - Conexiones de red
-  - Claves cifrado
-  - Malware en ejecución
-  2. Equipo Muerto: Equipo apagado
-  - Disco duro
-  - Log históricos
-  - Archivos persistentes
-  
-  # La regla (RFC 3227) - Orden de volatilidad
-  1. Registros y caché: Se sobreescriben constantemente, se pierden al cerrar
-  2. Tablas de enrutamientos, caché arp, tabla de procesos y memoria: Solo existe cuando el equipo esta encendido
-  3. Archivos temporales.
-  4. Disco.
-  5. Ficheros de logs.
-  6. Configuración física, topología de red: Cambia lentamente
-  7. Almacenamiento externo.
-  El orden puede adaptarse según el impacto al negocio y los objetivos del cliente.
+# Etapas
+En las etapas de respuestas a incidentes
+1. Preparación: Definir los procesos y herramientas a utilizar 
+2. Identificación y detección: Detección del incidente, equipos afectados y determinar el alcance inicial
+3. Contención: Contener los equipos afectados para evitar su movimiento laterar y propagación del virus
+4. Erradicación: Eliminar el malware, persistencia y backdoors
+5. Recuperación: Restaurar los ervicios
+6. Lecciones aprendidas: Información forense y corregir errores
+
+# Etapas específicas de la Adquisición Forense
+1. Planeación
+2. Identifiación de evidencias
+3. Adquisión
+4. Preservación
+5. Documentación y cadena de custodia
+
+# Tipos de Adquisión
+En la adquisión forense existen 2 tipos:
+1. Equipo Activo: Equipo encendido y en ejecución
+- RAM
+- Procesos
+- Conexiones de red
+- Claves cifrado
+- Malware en ejecución
+2. Equipo Muerto: Equipo apagado
+- Disco duro
+- Log históricos
+- Archivos persistentes
+
+# La regla (RFC 3227) - Orden de volatilidad
+1. Registros y caché: Se sobreescriben constantemente, se pierden al cerrar
+2. Tablas de enrutamientos, caché arp, tabla de procesos y memoria: Solo existe cuando el equipo esta encendido
+3. Archivos temporales.
+4. Disco.
+5. Ficheros de logs.
+6. Configuración física, topología de red: Cambia lentamente
+7. Almacenamiento externo.
+El orden puede adaptarse según el impacto al negocio y los objetivos del cliente.
 
 # Cadena de custodia
 - Quién
@@ -50,8 +50,13 @@
 - Recomendaciones
 
 # Adquisición de Memoria RAM (Live Response)
+La adquisición por memoria se debe realizar conectando un usb para no comprometer la integridad de los datos.
+- Hiberfil.sys: Archivo de hibernación. Cuando Windows hiberna, copia la RAM al disco duro.
+- Pagefile.sys: Archivo de paginación. Windows mueve partes de la RAM aquí cuando se queda sin memoria física.
 
 # Adquisición de Disco (Triage vs. Imagen Completa)
+1. Copia Completa: Aquí residen los archivos borrados que aún no han sido sobrescritos. Solo una imagen completa permite la recuperación de datos eliminados (Data Carving).
+2. Triage Forense (Adquisición Selectiva / Fast Forensics)
 
 # Artefactos de Ejecución (Evidence of Execution)
 "¿Se ejecutó este malware/programa en la máquina?"
@@ -83,6 +88,97 @@ Busco evidencia de ejecución en artefactos como Prefetch, Shimcache y AmCache. 
 - SOFTWARE: Programas instalados y versiones.
 - SECURE: Guarda las políticas de seguridad, auditoría y privilegios del sistema (LSA).
 - NTUSER.DAT: Configuración específica de cada usuario (historial de búsqueda, archivos recientes).
+
+# Rutas
+## 1. Actividad del Usuario (User Activity)
+Evidencia de qué archivos abrió el usuario y qué programas ejecutó.
+
+### UserAssist
+* **Ruta:** `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\UserAssist`
+* [cite_start]**Función:** Rastrea la ejecución de programas con interfaz gráfica (GUI) por usuario[cite: 10, 13].
+
+### RecentDocs
+* **Ruta:** `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs`
+* [cite_start]**Función:** Muestra la interacción con archivos recientes (los últimos abiertos o guardados)[cite: 7, 16].
+
+### ShellBags
+* **Ruta:** `HKCU\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU` (y `\Bags`)
+* **Función:** Rastrea la navegación de carpetas del explorador por usuario. [cite_start]Útil para saber qué carpetas visitó[cite: 25, 26].
+
+### RunMRU
+* **Ruta:** `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RunMRU`
+* [cite_start]**Función:** Historial de comandos escritos en la ventana "Ejecutar" (Start -> Run)[cite: 8, 17].
+
+### TypedPaths
+* **Ruta:** `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths`
+* [cite_start]**Función:** Rutas ingresadas manualmente en la barra de direcciones del Explorador[cite: 9, 18].
+
+---
+
+## 2. Dispositivos USB y Almacenamiento Externo (USB Forensics)
+Crucial para investigar exfiltración de datos o infecciones físicas.
+
+### USBSTOR
+* **Ruta:** `HKLM\SYSTEM\CurrentControlSet\Enum\USBSTOR`
+* [cite_start]**Función:** Contiene información del dispositivo: ID del vendedor (VID), ID del producto (PID) y Número de Serie[cite: 38, 39].
+
+### Mounted Devices
+* **Ruta:** `HKLM\SYSTEM\Mounted Devices`
+* [cite_start]**Función:** Permite encontrar la letra de la unidad (ej: `E:`) asociada al número de serie del USB[cite: 53, 54].
+
+### MountPoints2
+* **Ruta:** `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Mountpoints2`
+* [cite_start]**Función:** Permite identificar al **usuario específico** que montó/conectó el dispositivo USB[cite: 67, 68].
+
+---
+
+## 3. Persistencia (Persistence)
+Lugares donde el malware se configura para iniciar automáticamente con Windows.
+
+### Run / RunOnce (Usuario Actual)
+* **Ruta:** `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
+* [cite_start]**Función:** Inicia programas automáticamente al iniciar sesión ese usuario específico[cite: 30, 31].
+
+### Run / RunOnce (Todo el Sistema)
+* **Ruta:** `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
+* [cite_start]**Función:** Inicia programas automáticamente para **todos** los usuarios[cite: 32, 33].
+
+---
+
+## 4. Ejecución del Sistema (System Execution)
+Evidencia técnica de que un programa existió en el disco.
+
+### AppCompatCache (Shimcache)
+* **Ruta:** `HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache`
+* **Función:** Conocido como "Shimcache". Guarda la ruta completa del archivo, nombre y fecha de última modificación. [cite_start]Puede probar la ejecución incluso si el archivo ya fue borrado[cite: 111, 112, 115].
+
+---
+
+## 5. Redes y Conexiones (Network & RDP)
+Historial de conexiones de red y accesos remotos.
+
+### NetworkList (Perfiles de Red)
+* **Ruta:** `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList` (Subclaves: `Signatures` y `Profiles`)
+* **Función:** Evidencia de cada red a la que se ha conectado la máquina. [cite_start]Permite ver la fecha de la primera y última conexión a esa red[cite: 90, 88, 89].
+
+### Terminal Server Client (RDP)
+* **Ruta:** `HKCU\SOFTWARE\Microsoft\Terminal Server Client\Servers`
+* [cite_start]**Función:** Rastrea los objetivos (IPs o nombres de dominio) a los que el usuario se conectó mediante Escritorio Remoto (RDP)[cite: 19, 20].
+
+### Interfaces de Red
+* **Ruta:** `HKLM\SYSTEM\CurrentControlSet\services\Tcpip\Parameters\Interfaces`
+* [cite_start]**Función:** Almacena la configuración de las interfaces de red (IPs, máscaras, etc.)[cite: 84, 85].
+
+---
+
+## 6. Información General del Sistema
+Contexto básico de la máquina.
+
+### Nombre del Equipo
+* [cite_start]**Ruta:** `HKLM\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName` [cite: 81]
+
+### Zona Horaria
+* [cite_start]**Ruta:** `HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation` [cite: 80]
 
 # Consideraciones
 ## NTFS
