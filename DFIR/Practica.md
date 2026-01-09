@@ -2,9 +2,9 @@
 En las etapas de respuestas a incidentes
 1. Preparación: Definir los procesos y herramientas a utilizar 
 2. Identificación y detección: Detección del incidente, equipos afectados y determinar el alcance inicial
-3. Contención: Contener los equipos afectados para evitar su movimiento laterar y propagación del virus
+3. Contención: Contener los equipos afectados para evitar su movimiento lateral y propagación del virus
 4. Erradicación: Eliminar el malware, persistencia y backdoors
-5. Recuperación: Restaurar los ervicios
+5. Recuperación: Restaurar los servicios
 6. Lecciones aprendidas: Información forense y corregir errores
 
 # Etapas específicas de la Adquisición Forense
@@ -86,7 +86,7 @@ Busco evidencia de ejecución en artefactos como Prefetch, Shimcache y AmCache. 
 - SAM: Guarda los hashes de las contraseñas de usuarios locales.
 - SYSTEM: Configuración del sistema, zona horaria y USBSTOR (historial de USBs conectados).
 - SOFTWARE: Programas instalados y versiones.
-- SECURE: Guarda las políticas de seguridad, auditoría y privilegios del sistema (LSA).
+- SECURITY: Guarda las políticas de seguridad, auditoría y privilegios del sistema (LSA).
 - NTUSER.DAT: Configuración específica de cada usuario (historial de búsqueda, archivos recientes).
 
 # Rutas
@@ -185,7 +185,7 @@ Contexto básico de la máquina.
 Utilizado en windows para organizar, ordenar, almacenar y aisgnar los roles a cada archivo del disco duro
 
 ## ADS
-Característica exclusiva de NFTS, sirve para ocultar información en un archivo
+Característica exclusiva de NTFS, sirve para ocultar información en un archivo
 
 ## Veracidad
 Disco: Para identificar la integridad de la información recolectada validar la similitud de hash del archivo extraído
