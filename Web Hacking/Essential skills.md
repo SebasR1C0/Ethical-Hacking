@@ -97,7 +97,7 @@ eval("\141lert(1)")
 ```
 One: <a href="javascript:&bsol;u0061lert(1)">Click me</a>
 Two: <a href="javascript:\u0061lert(1)">Click me</a>
-Three: <a href="javascript:\u0061lert(1)">Click me</a>
+Three: <a href="javascript:alert(1)">Click me</a>
 ```
 
 ## SQL CHAR() function
