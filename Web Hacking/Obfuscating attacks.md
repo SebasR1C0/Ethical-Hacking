@@ -107,3 +107,4 @@ Example:
 ```
 CHAR(83)+CHAR(69)+CHAR(76)+CHAR(69)+CHAR(67)+CHAR(84)
 ```
+
