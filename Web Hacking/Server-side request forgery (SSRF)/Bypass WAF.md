@@ -15,6 +15,7 @@ You can use the # character to indicate a URL fragment.
 https://evil-host#expected-host
 ```
 Note: Before # is commented
+
 You can leverage the DNS naming hierarchy to place required input into a fully-qualified DNS name that you control. 
 ```
 https://expected-host.evil-host
