@@ -13,6 +13,7 @@
 - --r: Provide Request
 - --cookie="id=1"
 - --dump: Get all data
+- --string="The http response"
 ## Automatic and Filtering
 - --batch: Skip user input
 - --text-only
