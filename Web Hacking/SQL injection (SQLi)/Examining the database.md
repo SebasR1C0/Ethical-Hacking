@@ -8,7 +8,10 @@
 
 # Listing the contents of the database
 - Oracle:
+  
   SELECT * FROM information_schema.columns WHERE table_name = 'Users'
 - Non-Oracle:
+  
   SELECT * FROM all_tables
+  
   SELECT * FROM all_tab_columns WHERE table_name = 'USERS'
