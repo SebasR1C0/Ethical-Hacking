@@ -7,10 +7,11 @@
 ```
 
 # Listing the contents of the database
-- Oracle:
+- Non-Oracle:
   
   SELECT * FROM information_schema.columns WHERE table_name = 'Users'
-- Non-Oracle:
+  
+- Oracle:
   
   SELECT * FROM all_tables
   
