@@ -14,7 +14,7 @@ Note: And and Or filters support more than two arguments. For instance, (&(attr1
 | Name  | Filter |
 |-------|--------|
 | True  | (&)  |
-| False | (|)  |
+| False | (\|)  |
 
 
 | Example     | Example Description                                                                 |
