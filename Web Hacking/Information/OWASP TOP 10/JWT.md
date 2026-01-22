@@ -13,6 +13,17 @@
 <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/7d2ae94f-851c-419a-92e8-babaaa454ff4" />
 
 # COMMON ATTACKS
+## Accepting tokens with no signature
+```
+ "alg": "none"
+```
+Changing parameters
+```
+{
+    "username": "carlos",
+    "isAdmin": false
+}
+```
 ## Brute-forcing secret keys
 ```bash
 # HS256
