@@ -21,6 +21,7 @@ Note: And and Or filters support more than two arguments. For instance, (&(attr1
 |-------------|--------------------------------------------------------------------------------------|
 | (name=*)    | Matches all entries that contain a name attribute                                    |
 | (name=K*)   | Matches all entries that contain a name attribute that begins with K                 |
+| (name=*K)   | Matches all entries that contain a name attribute that ends with K                   |
 | (name=*a*)  | Matches all entries that contain a name attribute that contains an a                 |
 
 # Common Attribute Types
