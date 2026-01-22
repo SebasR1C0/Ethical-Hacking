@@ -16,9 +16,9 @@
 2. Indica que el valor acaba con in: ```{ username: { $regex: "in$" } }```
 
 ## Submitting query operators
-In JSON messages, you can insert query operators as nested objects. For example, {"username":"wiener"} becomes {"username":{"$ne":"invalid"}}.
+In JSON messages, you can insert query operators as nested objects. For example, ```{"username":"wiener"}``` becomes ```{"username":{"$ne":"invalid"}}```.
 
-For URL-based inputs, you can insert query operators via URL parameters. For example, username=wiener becomes username[$ne]=invalid. If this doesn't work, you can try the following:
+For URL-based inputs, you can insert query operators via URL parameters. For example, ```username=wiener``` becomes ```username[$ne]=invalid```. If this doesn't work, you can try the following:
 
 1. Convert the request method from GET to POST.
 2. Change the Content-Type header to application/json.
