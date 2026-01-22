@@ -11,3 +11,28 @@
 | Not  | (!())    | (!(name=Kaylie))                     | Matches all entries that contain a name attribute with a value different from Kaylie |
 
 Note: And and Or filters support more than two arguments. For instance, (&(attr1=a)(attr2=b)(attr3=c)(attr4=d)) is a valid search filter.
+
+| Example     | Example Description                                                                 |
+|-------------|--------------------------------------------------------------------------------------|
+| (name=*)    | Matches all entries that contain a name attribute                                    |
+| (name=K*)   | Matches all entries that contain a name attribute that begins with K                 |
+| (name=*a*)  | Matches all entries that contain a name attribute that contains an a                 |
+
+# Common Attribute Types
+| Attribute Type       | Description            |
+|----------------------|------------------------|
+| cn                   | Full Name              |
+| givenName            | First name             |
+| sn                   | Last name              |
+| uid                  | User ID                |
+| objectClass          | Object type            |
+| distinguishedName    | Distinguished Name     |
+| ou                   | Organizational Unit    |
+| title                | Title of a Person      |
+| telephoneNumber      | Phone Number           |
+| description          | Description            |
+| mail                 | Email Address          |
+| street               | Address                |
+| postalCode           | Zip code               |
+| member               | Group Memberships      |
+| userPassword         | User password          |
