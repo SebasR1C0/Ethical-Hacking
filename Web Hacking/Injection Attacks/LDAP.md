@@ -11,6 +11,11 @@
 | Not  | (!())    | (!(name=Kaylie))                     | Matches all entries that contain a name attribute with a value different from Kaylie |
 
 Note: And and Or filters support more than two arguments. For instance, (&(attr1=a)(attr2=b)(attr3=c)(attr4=d)) is a valid search filter.
+| Name  | Filter |
+|-------|--------|
+| True  | (&)  |
+| False | (|)  |
+
 
 | Example     | Example Description                                                                 |
 |-------------|--------------------------------------------------------------------------------------|
