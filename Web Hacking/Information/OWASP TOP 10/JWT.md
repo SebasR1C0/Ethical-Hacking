@@ -1,5 +1,5 @@
 # JWT
-- Decode Tools: [JWT Dedoder](https://www.jwt.io/) and Burpsuite
+- Decode Tools: [JWT Decoder](https://www.jwt.io/) and Burpsuite
 
 | Tipo de Clave     | Algoritmos JWT Comunes        | Caso de Uso Principal                                      |
 |-------------------|--------------------------------|-------------------------------------------------------------|
