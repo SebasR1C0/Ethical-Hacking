@@ -3,8 +3,8 @@
 - $ne - Matches all values that are not equal to a specified value.
 - $in - Matches all of the values specified in an array.
 - $regex - Selects documents where values match a specified regular expression.
-- - Indica que el valor empieza con adm: { username: { $regex: "^adm" } }
-- - Indica que el valor acaba con in: { username: { $regex: "in$" } }
+ - Indica que el valor empieza con adm: { username: { $regex: "^adm" } }
+ - Indica que el valor acaba con in: { username: { $regex: "in$" } }
 
 NOte: Only it if necessary 
 1. Convert the request method from GET to POST.
