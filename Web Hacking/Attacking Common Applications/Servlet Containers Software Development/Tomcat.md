@@ -8,6 +8,7 @@ Distribution example
 
 - Path webpps
 <img width="668" height="277" alt="image" src="https://github.com/user-attachments/assets/c9295c0b-f4d8-4332-9448-c08e52514ab8" />
+
 The most important file WEB-INF/web.xml
 
 NOte: default credentials -> tomcat:tomcat, admin:admin
