@@ -9,12 +9,17 @@ hostname
 ip a
 ```
 
-# OS Version
+## OS Version
 ```
- cat /etc/os-release
+cat /etc/os-release
 ```
 
 ## Kernel Version
 ```
 uname -a
+```
+
+## CPU Version
+```
+lscpu
 ```
