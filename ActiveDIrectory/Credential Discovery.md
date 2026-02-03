@@ -1,5 +1,5 @@
 # Group Policy Preferences (GPP) Credential Disclosure
-During domain enumeration, read access to the SYSVOL share was identified. Inside the following path:
+Read access to the SYSVOL share was identified. Inside the following path:
 ```
 SYSVOL/{GUID}/MACHINE/Preferences/Groups/Groups.xml
 ```
