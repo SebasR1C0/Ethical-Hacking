@@ -5,7 +5,7 @@ Enumerating password policy in Linux
 # With credentials
 crackmapexec smb 172.16.5.5 -u avazquez -p Password123 --pass-pol
 
-#Null Session
+# Null Session
 rpcclient -U "" -N 172.16.5.5
 rpcclient $> querydominfo
 rpcclient $> getdompwinfo
