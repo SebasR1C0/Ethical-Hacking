@@ -1,0 +1,4 @@
+# Active hosts
+```
+fping -asgq 172.16.5.0/23
+```
