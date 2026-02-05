@@ -35,6 +35,7 @@ Explotation
 Invoke-Inveigh Y -NBNS Y -ConsoleOutput Y -FileOutput Y
 ```
 ## 2
+Explotation
 ```
 .\Inveigh.exe
 ```
