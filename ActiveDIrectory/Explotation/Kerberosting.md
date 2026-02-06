@@ -5,6 +5,7 @@ To perform this attack, a valid domain user account is required:
 ```
 GetUserSPNs.py active.htb/SVC_TGS:GPPstillStandingStrong2k18
 ```
+Note: In some cases, the password is not necessary
 This command enumerates SPNs and identifies service accounts for which TGS tickets can be requested.
 
 Once a vulnerable service account is identified, the TGS ticket hash can be requested and saved for offline cracking:
