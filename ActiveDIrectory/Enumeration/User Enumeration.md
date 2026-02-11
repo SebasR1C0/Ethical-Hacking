@@ -18,3 +18,8 @@ ldapsearch -h 172.16.5.5 -x -b "DC=INLANEFREIGHT,DC=LOCAL" -s sub "(&(objectclas
 crackmapexec smb 172.16.5.5 -u forend -p Klmcargo2 --users
 crackmapexec smb 172.16.5.130 -u forend -p Klmcargo2 --loggedon-users
 ```
+# Privileges Users
+LDAP queries
+```
+python3 windapsearch.py --dc-ip 172.16.5.5 -u forend@inlanefreight.local -p Klmcargo2 -PU
+```
