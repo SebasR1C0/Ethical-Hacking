@@ -12,6 +12,8 @@ CN=ACADEMY-EA-DC01,OU=Domain Controllers,DC=INLANEFREIGHT,DC=LOCAL
 # Groups
 ```
 crackmapexec smb 172.16.5.5 -u forend -p Klmcargo2 --groups
+
+python3 windapsearch.py --dc-ip 172.16.5.5 -u forend@inlanefreight.local -p Klmcargo2 --da
 ```
 
 # Shares
