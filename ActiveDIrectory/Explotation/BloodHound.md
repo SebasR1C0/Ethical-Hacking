@@ -8,6 +8,8 @@ net user shaiiko shaiiko123! /add /domain
 Add to group:
 ```
 net group "Exchange Windows Permissions" shaiiko /add /domain
+# or
+Add-DomainGroupMember -Identity "NombreDelGrupo" -Members shaiiko -Credential $Cred
 ```
 Veriying:
 ```
