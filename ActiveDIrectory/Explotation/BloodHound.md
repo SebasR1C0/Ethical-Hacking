@@ -1,3 +1,7 @@
+# Extrating data
+```
+.\SharpHound.exe --collectionmethods all
+```
 # Groups
 ## Account Operators
 The Account Operators group has privileges to create and manage domain user accounts, including adding users to certain domain groups (excluding highly privileged groups such as Domain Admins).
