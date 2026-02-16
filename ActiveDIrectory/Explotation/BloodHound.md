@@ -1,6 +1,7 @@
 # Extrating data
 ```
 .\SharpHound.exe --collectionmethods all
+bloodhound-python -d intelligence.htb -u Ted.Graves -p Mr.Teddy -ns 10.10.10.248 -c All
 ```
 # Groups
 ## Account Operators
