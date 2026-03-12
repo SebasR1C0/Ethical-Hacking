@@ -66,6 +66,7 @@ Identify target system's infrastructre
 - Wappalyzer
 - BuiltWith: Provide detailed reports on a webtsite's technologies
 - WhatWeb
+- [SecureHeader](https://securityheaders.com/?q=https%3A%2F%2Facademy.tcm-sec.com&followRedirects=on)
 - Nmap
 - Netcraft: Provide website fingerprinting and security reporting
 - wafw00f: Identifying WAFs
