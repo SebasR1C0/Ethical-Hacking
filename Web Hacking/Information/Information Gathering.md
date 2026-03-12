@@ -49,9 +49,15 @@ Zone Transfer
 
 <img width="970" height="500" alt="image" src="https://github.com/user-attachments/assets/ac0e26e4-b34b-4e28-bc6a-910d097a1ef3" />
 
-Vhost:
-
+## Vhost:
+- Burpsuite
 <img width="1264" height="478" alt="image" src="https://github.com/user-attachments/assets/7fc29f6d-e623-440d-90db-bb1c74bb209c" />
+
+- subfinder
+- [crt.sh](https://crt.sh)
+- [assetfinder](https://github.com/tomnomnom/assetfinder)
+- amass
+
 
 # Fingerprinting
 Identify target system's infrastructre
