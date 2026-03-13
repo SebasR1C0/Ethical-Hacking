@@ -100,3 +100,5 @@ GET /admin/delete?username=carlos
 Host: example.com
 Referer: example.com/admin
 ```
+### X-Forwarded-For
+Differente IP
