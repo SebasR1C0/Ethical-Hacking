@@ -93,3 +93,10 @@ X-http-method-override: GET
 Or
 X-http-override: GET
 ```
+### Referer
+Referes with privilege path
+```
+GET /admin/delete?username=carlos
+Host: example.com
+Referer: example.com/admin
+```
