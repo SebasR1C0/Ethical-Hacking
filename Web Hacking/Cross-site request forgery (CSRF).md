@@ -25,3 +25,4 @@ Espera que abra la imagen para que mande a correr el demas codigo
 </form>
 ```
 2. Usar otro endpoint mal configurado
+3. Web socket vulnerabilidad
