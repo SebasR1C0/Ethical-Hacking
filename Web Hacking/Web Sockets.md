@@ -10,10 +10,10 @@
 3. CSRF
 ```
 <script>
-var wsocket = new WebSocket("wss://0a3400710446af96867ed9ac0132009d.web-security-academy.net/chat");
+var wsocket = new WebSocket("wss://0a96004604b5af78863adac600aa002a.web-security-academy.net/chat");
 
 wsocket.onopen = function() {
-    ws.send("READY");
+    wsocket.send("READY");
 };
 
 wsocket.onmessage = function(event) {
