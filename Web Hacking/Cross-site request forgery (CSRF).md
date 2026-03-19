@@ -26,3 +26,8 @@ Espera que abra la imagen para que mande a correr el demas codigo
 ```
 2. Usar otro endpoint mal configurado
 3. Web socket vulnerabilidad
+4. Con un SSO y con tiempo de espera
+```
+
+```
+
