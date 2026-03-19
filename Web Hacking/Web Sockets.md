@@ -5,7 +5,7 @@
 ```
 2. Ofucación
 ```
-{"message":"<img src=1 oNeRrOr=alert'1'>"}
+{"message":"<img src=1 oNeRrOr=alert`1`>"}
 ``` 
 3. CSRF
 ```
