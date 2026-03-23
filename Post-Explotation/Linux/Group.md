@@ -59,7 +59,7 @@ devops@NIX02:~/64-bit Alpine$ lxc exec r00t /bin/sh
 uid=0(root) gid=0(root)
 ~ #
 ```
-Docker
+# Docker
 Placing a user in the docker group is essentially equivalent to root level access to the file system without requiring a password. Members of the docker group can spawn new docker containers. One example would be running the command docker run -v /root:/mnt -it ubuntu. This command creates a new Docker instance with the /root directory on the host file system mounted as a volume. Once the container is started we are able to browse the mounted directory and retrieve or add SSH keys for the root user. This could be done for other directories such as /etc which could be used to retrieve the contents of the /etc/shadow file for offline password cracking or adding a privileged user.
 
 # Disk
