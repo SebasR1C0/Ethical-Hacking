@@ -21,6 +21,9 @@ sudo -l
 find / -user root -perm -4000 -exec ls -ldb {} \; 2>/dev/null
 find / -uid 0 -perm -6000 -type f 2>/dev/null
 
+# Capabilities
+find /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin -type f -exec getcap {} \;
+
 # Path Abuse
 echo $PATH
 
