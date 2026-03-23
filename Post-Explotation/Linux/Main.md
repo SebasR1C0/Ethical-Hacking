@@ -1,5 +1,6 @@
 # Tools
 [LinPeas](https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS) and [LinEnum](https://github.com/rebootuser/LinEnum)
+[Lynis](https://github.com/cisofy/lynis)
 
 # User Information
 ```
