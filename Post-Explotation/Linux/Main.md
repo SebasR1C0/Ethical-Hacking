@@ -97,3 +97,4 @@ lpstat
 - Path Abuse
 - Wildcard Abuse 
 - Escaping Restricted Shells (ssh htb-user@10.129.205.109 bash)
+- [Capabilities](https://github.com/b4rdia/HackTricks/blob/master/linux-hardening/privilege-escalation/linux-capabilities.md) 
