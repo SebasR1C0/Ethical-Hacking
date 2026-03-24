@@ -1,5 +1,5 @@
 # LXC / LXD
-LXD is similar to Docker and is Ubuntu's container manager.¿
+LXD is similar to Docker and is Ubuntu's container manager.
 
 Unzip the Alpine image.
 
@@ -11,7 +11,7 @@ extracting: 64-bit Alpine/alpine.tar.gz
 inflating: 64-bit Alpine/alpine.tar.gz.root  
 cd 64-bit\ Alpine/
 ```
-Start the LXD initialization process. ¿
+Start the LXD initialization process.
 ```
 devops@NIX02:~$ lxd init
 ```
