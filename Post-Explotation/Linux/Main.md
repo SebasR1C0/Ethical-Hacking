@@ -31,6 +31,9 @@ echo $PATH
 
 # Enumeration of application 
 cat /etc/shells
+
+# BInarie's libraries
+ldd /bin/ls
 ```
 
 # System Information
