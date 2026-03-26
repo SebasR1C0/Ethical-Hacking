@@ -105,3 +105,4 @@ lpstat
 - [Capabilities](https://github.com/b4rdia/HackTricks/blob/master/linux-hardening/privilege-escalation/linux-capabilities.md) 
 - [LD_PRELOAD Privilege Escalation](https://github.com/SebasR1C0/Ethical-Hacking/blob/main/Post-Explotation/Linux/LD_PRELOAD.md)
 - [Shared Object Hijacking](https://github.com/SebasR1C0/Ethical-Hacking/blob/main/Post-Explotation/Linux/Shared%20Object%20Hijacking.md)
+- [Logrotate](https://medium.com/@ihouelecaurcy/linux-privilege-escalation-exploiting-logrotate-race-condition-for-root-access-htb-3970e4c1eba8)
