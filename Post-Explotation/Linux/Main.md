@@ -106,3 +106,4 @@ lpstat
 - [LD_PRELOAD Privilege Escalation](https://github.com/SebasR1C0/Ethical-Hacking/blob/main/Post-Explotation/Linux/LD_PRELOAD.md)
 - [Shared Object Hijacking](https://github.com/SebasR1C0/Ethical-Hacking/blob/main/Post-Explotation/Linux/Shared%20Object%20Hijacking.md)
 - [Logrotate](https://medium.com/@ihouelecaurcy/linux-privilege-escalation-exploiting-logrotate-race-condition-for-root-access-htb-3970e4c1eba8)
+- [Python Library Hijacking](https://medium.com/analytics-vidhya/python-library-hijacking-on-linux-with-examples-a31e6a9860c8)
