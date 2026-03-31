@@ -66,4 +66,4 @@ Get-AppLockerPolicy -Local | Test-AppLockerPolicy -path
 ```
 
 # Uncommon attacks
-
+- [Privileges](https://github.com/SebasR1C0/Ethical-Hacking/blob/main/ActiveDIrectory/Explotation/BloodHound.md)
