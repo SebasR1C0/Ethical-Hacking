@@ -3,15 +3,38 @@
 
 # User Information
 ```
+net user
+net localgroup or net localgroup administrators
 ```
 # Privileges
 ```
-
+whomai /all
 ```
 
 # System Information
 ```
+systeminfo
 
+# Enumeration 
+set
+```
+
+# Services
+```
+# Services
+netstat -ano
+
+# Processes
+tasklist /svc
+pipelist.exe /accepteula or gci \\.\pipe\ or accesschk.exe /accepteula \\.\Pipe\lsass -v
+
+# Installed Programs
+wmic product get name
+Get-WmiObject -Class Win32_Product |  select Name, Version
+
+# Services uploads
+wmic qfe
+Get-HotFix | ft -AutoSize
 ```
 
 # Common Files
