@@ -15,6 +15,9 @@ whomai /all
 ```
 systeminfo
 
+# Windows version
+[environment]::OSVersion.Version
+
 # Enumeration 
 set
 ```
