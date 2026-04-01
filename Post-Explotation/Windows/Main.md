@@ -9,6 +9,12 @@ net localgroup or net localgroup administrators
 # Privileges
 ```
 whomai /all
+
+# Hashes
+icacls c:\Windows\System32\config\SAM
+
+# APPS
+icacls "c:\Program Files (x86)\Mozilla Maintenance Service\maintenanceservice.exe"
 ```
 
 # System Information
@@ -35,8 +41,13 @@ pipelist.exe /accepteula or gci \\.\pipe\ or accesschk.exe /accepteula \\.\Pipe\
 wmic product get name
 Get-WmiObject -Class Win32_Product |  select Name, Version
 
+# Spoolss (CVE-2021-1675.ps1)
+ls \\localhost\pipe\spoolss
+Set-ExecutionPolicy Bypass -Scope Process
+
+
 # Services uploads
-wmic qfe
+wmic qfe list brief
 Get-HotFix | ft -AutoSize
 ```
 
