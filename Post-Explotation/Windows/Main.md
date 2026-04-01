@@ -52,15 +52,60 @@ Get-HotFix | ft -AutoSize
 ```
 
 # Common Files
+Information in PS history: 
+```
+(Get-PSReadLineOption).HistorySavePath  
+```
+All users
+```
+foreach($user in ((ls C:\users).fullname)){cat "$user\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt" -ErrorAction SilentlyContinue}
+```
 - .*
 - *_history or _hist
 - *.bak
-- *.conf -o -name .config
-- *.py -o -name .sh
+- *.py
+- .kdbx
+- .vmdk
+- .vdhx
+- .ppk
+- .sqlite*
+- .txt
+- .ini
+- .cfg
+- .config
+- .xml
 Code
 ```
-find / -type f \( -iname *.conf -o -name *.config \) -exec ls -l {} \; 2>/dev/null
+findstr /SI /M "password" *.xml *.ini *.txt
+findstr /si password *.xml *.ini *.txt *.config
+
+dir /S /B *pass*.txt == *pass*.xml == *pass*.ini == *cred* == *vnc* == 
+where /R C:\ *.config
+#PS
+Get-ChildItem C:\ -Recurse -Include *.rdp, *.config, *.vnc, *.cred -ErrorAction Ignore
 ```
+EXAMPLES
+```
+%SYSTEMDRIVE%\pagefile.sys
+%WINDIR%\debug\NetSetup.log
+%WINDIR%\repair\sam
+%WINDIR%\repair\system
+%WINDIR%\repair\software, %WINDIR%\repair\security
+%WINDIR%\iis6.log
+%WINDIR%\system32\config\AppEvent.Evt
+%WINDIR%\system32\config\SecEvent.Evt
+%WINDIR%\system32\config\default.sav
+%WINDIR%\system32\config\security.sav
+%WINDIR%\system32\config\software.sav
+%WINDIR%\system32\config\system.sav
+%WINDIR%\system32\CCM\logs\*.log
+%USERPROFILE%\ntuser.dat
+%USERPROFILE%\LocalS~1\Tempor~1\Content.IE5\index.dat
+%WINDIR%\System32\drivers\etc\hosts
+C:\ProgramData\Configs\*
+C:\Program Files\Windows PowerShell\*
+```
+
 
 # Network
 ```
