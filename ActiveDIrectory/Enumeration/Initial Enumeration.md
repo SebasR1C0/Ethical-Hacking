@@ -2,6 +2,11 @@
 ```
 fping -asgq 172.16.5.0/23
 ```
+# Sincronize
+```
+ntpdate -b fluffy.htb
+```
+
 # Krbt conf
 ```
 nxc smb 10.129.232.88 --generate-krb5-file /etc/krb5.conf
